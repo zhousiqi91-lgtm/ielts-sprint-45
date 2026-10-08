@@ -6,12 +6,12 @@
 <meta name="theme-color" content="#0a0f1e">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>雅思 4.5 冲刺舱 · IELTS Sprint</title>
+<title>英语冲刺舱 · 从小白到大神 | IELTS & Working Holiday English</title>
 <style>
 :root{
-  --bg:#070b16; --bg2:#0b1226; --card:rgba(255,255,255,.055); --card2:rgba(255,255,255,.09);
+  --bg:#070b16; --bg2:#0b1226; --card:rgba(255,255,255,.055);
   --line:rgba(255,255,255,.10); --txt:#eef2ff; --sub:#9aa7c7; --dim:#67739a;
-  --gold:#f5c451; --gold2:#ffdf8e; --green:#2fe6a8; --red:#ff6b7a; --blue:#5ea8ff;
+  --gold:#f5c451; --gold2:#ffdf8e; --green:#2fe6a8; --red:#ff6b7a; --blue:#5ea8ff; --purple:#b78cff;
   --grad:linear-gradient(120deg,#f5c451,#ff9d5c 55%,#ff6b7a);
   --grad2:linear-gradient(120deg,#2fe6a8,#5ea8ff);
   --r:20px; --shadow:0 18px 50px rgba(0,0,0,.45);
@@ -26,12 +26,11 @@ body::before{content:"";position:fixed;inset:0;background:
   linear-gradient(180deg,var(--bg2),var(--bg));z-index:-2}
 body::after{content:"";position:fixed;inset:0;background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:26px 26px;z-index:-1;pointer-events:none}
 .wrap{max-width:1080px;margin:0 auto;padding:0 18px 110px}
-/* ---------- header ---------- */
 header{padding:44px 0 8px;text-align:center;animation:fadeUp .7s ease both}
 .kicker{display:inline-block;font-size:12px;letter-spacing:.35em;color:var(--gold);border:1px solid rgba(245,196,81,.35);padding:7px 16px 7px 20px;border-radius:999px;background:rgba(245,196,81,.06)}
-h1{font-size:clamp(38px,7vw,64px);font-weight:900;line-height:1.08;margin:20px 0 6px;background:linear-gradient(180deg,#fff,#c9d4f5);-webkit-background-clip:text;background-clip:text;color:transparent}
+h1{font-size:clamp(36px,7vw,60px);font-weight:900;line-height:1.1;margin:20px 0 6px;background:linear-gradient(180deg,#fff,#c9d4f5);-webkit-background-clip:text;background-clip:text;color:transparent}
 h1 .hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero-sub{color:var(--sub);font-size:15px;line-height:1.7;max-width:640px;margin:8px auto 0}
+.hero-sub{color:var(--sub);font-size:15px;line-height:1.75;max-width:680px;margin:8px auto 0}
 .hero-sub b{color:var(--gold2)}
 .band-row{display:flex;gap:14px;justify-content:center;align-items:stretch;margin:28px auto 4px;flex-wrap:wrap}
 .band-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px 22px;min-width:150px;backdrop-filter:blur(8px);box-shadow:var(--shadow)}
@@ -44,16 +43,15 @@ h1 .hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;
 .ring::before{content:"";position:absolute;inset:5px;border-radius:50%;background:#0d1428}
 .ring span{position:relative}
 .ring-lab{font-size:11px;color:var(--dim);letter-spacing:.15em}
-/* ---------- nav ---------- */
-nav{position:sticky;top:12px;z-index:50;display:flex;gap:8px;justify-content:center;margin:22px auto 6px;background:rgba(10,15,30,.72);border:1px solid var(--line);padding:8px;border-radius:999px;backdrop-filter:blur(14px);width:max-content;max-width:100%;overflow-x:auto;box-shadow:var(--shadow)}
-nav button{border:0;background:transparent;color:var(--sub);font-size:14px;font-weight:700;padding:10px 18px;border-radius:999px;cursor:pointer;white-space:nowrap;transition:.25s;font-family:inherit}
+nav{position:sticky;top:12px;z-index:50;display:flex;gap:8px;justify-content:flex-start;margin:22px auto 6px;background:rgba(10,15,30,.72);border:1px solid var(--line);padding:8px;border-radius:999px;backdrop-filter:blur(14px);width:max-content;max-width:100%;overflow-x:auto;box-shadow:var(--shadow)}
+nav button{border:0;background:transparent;color:var(--sub);font-size:14px;font-weight:700;padding:10px 16px;border-radius:999px;cursor:pointer;white-space:nowrap;transition:.25s;font-family:inherit}
 nav button.on{background:var(--grad);color:#20130a;box-shadow:0 8px 24px rgba(245,166,81,.35)}
 nav button:not(.on):hover{color:#fff;background:rgba(255,255,255,.07)}
-/* ---------- sections/cards ---------- */
 section{display:none;padding-top:22px}
 section.on{display:block;animation:fadeUp .45s ease both}
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.grid1{display:grid;grid-template-columns:1fr;gap:16px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;backdrop-filter:blur(8px);box-shadow:var(--shadow)}
 .card h3{font-size:17px;margin-bottom:6px}
 .card .desc{color:var(--sub);font-size:13.5px;line-height:1.75}
@@ -62,6 +60,7 @@ section.on{display:block;animation:fadeUp .45s ease both}
 .tag.green{color:var(--green);background:rgba(47,230,168,.1);border:1px solid rgba(47,230,168,.3)}
 .tag.blue{color:var(--blue);background:rgba(94,168,255,.1);border:1px solid rgba(94,168,255,.3)}
 .tag.red{color:var(--red);background:rgba(255,107,122,.1);border:1px solid rgba(255,107,122,.3)}
+.tag.purple{color:var(--purple);background:rgba(183,140,255,.1);border:1px solid rgba(183,140,255,.32)}
 .btn{border:0;cursor:pointer;font-family:inherit;font-weight:800;font-size:14px;padding:12px 22px;border-radius:14px;background:var(--grad);color:#221306;transition:.2s;box-shadow:0 10px 26px rgba(245,150,60,.28)}
 .btn:hover{transform:translateY(-2px)}
 .btn.ghost{background:rgba(255,255,255,.07);color:var(--txt);border:1px solid var(--line);box-shadow:none}
@@ -81,7 +80,12 @@ section.on{display:block;animation:fadeUp .45s ease both}
 .progress{height:10px;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden;margin-top:10px}
 .progress i{display:block;height:100%;border-radius:99px;background:var(--grad);transition:width .6s cubic-bezier(.2,.9,.3,1)}
 .progress.grn i{background:var(--grad2)}
-/* ---------- vocab ---------- */
+.level{border:1px solid var(--line);border-radius:var(--r);padding:22px;background:var(--card);box-shadow:var(--shadow)}
+.level .lh{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.level .band{font-size:26px;font-weight:900}
+.level ul{margin:10px 0 0 18px;color:var(--sub);font-size:13.5px;line-height:1.9}
+.level ul b{color:#fff}
+.pass-std{margin-top:12px;font-size:12.5px;color:var(--gold2);background:rgba(245,196,81,.07);border:1px solid rgba(245,196,81,.25);border-radius:10px;padding:9px 12px;line-height:1.7}
 .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
 .filters button{border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--sub);padding:8px 16px;border-radius:999px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;transition:.2s}
 .filters button.on{background:#fff;color:#0b1020;border-color:#fff}
@@ -91,17 +95,16 @@ section.on{display:block;animation:fadeUp .45s ease both}
 .vface{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:24px;padding:28px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border:1px solid var(--line);box-shadow:var(--shadow)}
 .vface.front{background:linear-gradient(150deg,rgba(245,196,81,.14),rgba(255,255,255,.04) 55%)}
 .vface.back{background:linear-gradient(150deg,rgba(47,230,168,.13),rgba(255,255,255,.04) 55%);transform:rotateY(180deg)}
-.vword{font-size:clamp(30px,6vw,42px);font-weight:900;letter-spacing:.01em}
+.vword{font-size:clamp(28px,6vw,40px);font-weight:900;letter-spacing:.01em}
 .vipa{color:var(--gold2);font-size:15px;margin-top:8px;font-family:ui-monospace,Menlo,monospace}
 .vcat{position:absolute;top:18px;left:20px;font-size:11px;letter-spacing:.18em;color:var(--dim)}
 .vhint{position:absolute;bottom:16px;font-size:12px;color:var(--dim)}
-.vcn{font-size:30px;font-weight:900;color:var(--green)}
+.vcn{font-size:28px;font-weight:900;color:var(--green)}
 .vex{margin-top:14px;color:var(--sub);font-size:14px;line-height:1.8}
 .vex b{color:#fff}
 .vctrl{display:flex;gap:10px;justify-content:center;margin-top:18px;flex-wrap:wrap}
 .spk{background:rgba(255,255,255,.08);border:1px solid var(--line);color:#fff;width:44px;height:44px;border-radius:50%;font-size:18px;cursor:pointer;transition:.2s;flex:none}
 .spk:hover{background:rgba(245,196,81,.25)}
-/* ---------- quiz bits ---------- */
 .qbox{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:16px;padding:18px;margin-top:14px}
 .qbox .q{font-size:16px;font-weight:700;line-height:1.7}
 .qbox .q .blank{color:var(--gold);border-bottom:2px dashed var(--gold);padding:0 8px}
@@ -120,7 +123,6 @@ section.on{display:block;animation:fadeUp .45s ease both}
 .exline{font-size:15px;line-height:2;margin-top:8px}
 .exline .bad{color:var(--red);text-decoration:line-through;text-decoration-thickness:2px}
 .exline .good{color:var(--green);font-weight:800}
-/* ---------- reading ---------- */
 .passage{font-size:16.5px;line-height:2.05;color:#dbe4ff}
 .passage .w{border-bottom:1px dotted rgba(245,196,81,.65);cursor:pointer;color:var(--gold2);font-weight:700}
 .pop{position:fixed;z-index:99;background:#131c38;border:1px solid rgba(245,196,81,.45);border-radius:14px;padding:12px 14px;box-shadow:var(--shadow);max-width:250px;display:none}
@@ -129,19 +131,24 @@ section.on{display:block;animation:fadeUp .45s ease both}
 .pop .pe{color:var(--sub);font-size:12.5px;margin-top:5px;line-height:1.6}
 .trans{display:none;margin-top:14px;background:rgba(94,168,255,.07);border:1px solid rgba(94,168,255,.3);border-radius:14px;padding:14px 16px;line-height:1.9;font-size:14.5px;color:#d6e7ff}
 .trans.show{display:block}
-/* ---------- builder ---------- */
 .built{min-height:56px;border:2px dashed rgba(245,196,81,.4);border-radius:14px;padding:12px 14px;font-size:17px;font-weight:700;display:flex;flex-wrap:wrap;gap:7px;align-items:center;background:rgba(245,196,81,.04)}
 .chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}
 .chip{border:1px solid var(--line);background:#fff;color:#101736;font-weight:800;font-size:15px;padding:9px 15px;border-radius:999px;cursor:pointer;transition:.15s;font-family:inherit}
 .chip:hover{transform:translateY(-2px)}
 .chip.used{opacity:.25;pointer-events:none}
-/* ---------- misc ---------- */
+.phrase{display:flex;gap:12px;align-items:flex-start;padding:13px 0;border-bottom:1px dashed rgba(255,255,255,.09)}
+.phrase:last-child{border-bottom:0}
+.phrase .pen{font-weight:800;font-size:15.5px;line-height:1.6}
+.phrase .pcn{color:var(--sub);font-size:12.5px;margin-top:2px;line-height:1.6}
+.big-play{width:100%;padding:20px;border-radius:16px;border:1px solid rgba(47,230,168,.4);background:rgba(47,230,168,.08);color:#d2ffee;font-size:17px;font-weight:900;cursor:pointer;font-family:inherit;transition:.2s}
+.big-play:hover{background:rgba(47,230,168,.16)}
+input[type=text].win{background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:10px;color:#fff;padding:9px 12px;font-size:15px;font-family:inherit;width:150px}
+input[type=text].win:focus{outline:2px solid rgba(245,196,81,.6)}
 .score-big{font-size:52px;font-weight:900;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .listline{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px dashed rgba(255,255,255,.08);font-size:13.5px;color:var(--sub)}
 .listline b{color:#fff}
 .mistake{font-size:13px;color:#ffb9c1;background:rgba(255,107,122,.07);border:1px solid rgba(255,107,122,.25);border-radius:10px;padding:9px 12px;margin-top:8px;line-height:1.6}
 footer{text-align:center;color:var(--dim);font-size:12.5px;line-height:1.9;padding:10px 0 0}
-.bottom-pad{height:8px}
 @media(max-width:640px){
   header{padding-top:30px}
   nav{position:fixed;top:auto;bottom:calc(10px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);margin:0;width:calc(100% - 20px);justify-content:flex-start}
@@ -153,24 +160,28 @@ footer{text-align:center;color:var(--dim);font-size:12.5px;line-height:1.9;paddi
 <body>
 <div class="wrap">
   <header>
-    <span class="kicker">IELTS · TARGET BAND 4.5</span>
-    <h1>雅思 <span class="hl">4.5</span> 冲刺舱</h1>
-    <p class="hero-sub">不为出国留学，就为一张<b>澳洲打工度假签证</b>的入场券。<br>每天 15 分钟，把功能性英语从“会讲两句”练到能过签、能找工。</p>
+    <span class="kicker">ENGLISH · ZERO TO HERO</span>
+    <h1>英语冲刺舱<br><span class="hl">从小白到大神</span></h1>
+    <p class="hero-sub">目标先定在澳洲：<b>雅思 4.5 拿下 462 打工度假签</b>，再一路练到能在任何英语国家找工、生活、谈工资。<br>每天 15 分钟，按级别闯关，不跳级、不自欺欺人。</p>
     <div class="band-row">
       <div class="band-card"><div class="lab">当前估分 CURRENT</div><div class="num">3.0 <small>/ 9.0</small></div></div>
       <div class="band-arrow">➜</div>
-      <div class="band-card"><div class="lab">目标 TARGET</div><div class="num" style="color:var(--gold)">4.5 <small>/ 9.0</small></div></div>
+      <div class="band-card"><div class="lab">第一关 TARGET</div><div class="num" style="color:var(--gold)">4.5 <small>过签</small></div></div>
+      <div class="band-card"><div class="lab">终局 GOAL</div><div class="num" style="color:var(--green)">6.5+ <small>大神</small></div></div>
       <div class="band-card ring-wrap"><div class="ring" id="ringTop" style="--p:0"><span>0%</span></div><div class="ring-lab">总进度 PROGRESS</div></div>
     </div>
   </header>
 
   <nav id="mainNav">
     <button data-tab="home" class="on">🏠 今日</button>
+    <button data-tab="roadmap">🗺 路线</button>
     <button data-tab="vocab">🃏 单词</button>
     <button data-tab="grammar">🔧 语法</button>
+    <button data-tab="listening">👂 听力</button>
     <button data-tab="reading">📖 阅读</button>
+    <button data-tab="speaking">🗣 口语写作</button>
     <button data-tab="builder">🧩 造句</button>
-    <button data-tab="quiz">🎯 小测</button>
+    <button data-tab="quiz">🎯 真测</button>
   </nav>
 
   <!-- HOME -->
@@ -184,28 +195,84 @@ footer{text-align:center;color:var(--dim);font-size:12.5px;line-height:1.9;paddi
         <div class="stat-row">
           <div class="stat"><div class="v" id="statStreak">0</div><div class="k">连续天数</div></div>
           <div class="stat"><div class="v" id="statWords">0</div><div class="k">已掌握单词</div></div>
-          <div class="stat"><div class="v" id="statQuiz">—</div><div class="k">最近小测</div></div>
+          <div class="stat"><div class="v" id="statQuiz">—</div><div class="k">最近真测</div></div>
         </div>
       </div>
       <div class="card">
-        <span class="tag green">WHY 4.5</span>
-        <h3>为什么偏偏是 4.5？</h3>
-        <p class="desc">澳洲 462 打工度假签要的是 <b style="color:#fff">functional English（功能性英语）</b>，大致对应雅思总分 4.5。它不要求你聊文学，只要求你能：看懂招工广告、填表、跟主管说清“几点上班、多少钱一小时、周末上不上班”。</p>
-        <div class="why">所以这里练的全是<b>真场景</b>：warehouse（仓库）、casual worker（临时工）、wage（工资）、shift（班次）—— 进了澳洲天天用的词，而不是课本里的苹果香蕉。</div>
+        <span class="tag green">WHY THIS ROAD</span>
+        <h3>这条路是怎么排的</h3>
+        <p class="desc">澳洲 462 签要的是 <b style="color:#fff">functional English（功能性英语）</b>，约等于雅思 4.5——这是第一关，不是终点。到了澳洲你会发现：4.5 够过签，但要跟主管谈排班、跟房东砍房租、面试时把自己卖出去，得往 5.5-6.5 走。所以这个站按 <b style="color:#fff">L0 小白 → L4 大神</b> 五级排：</p>
+        <div class="why">先把命保住（看懂招工、填表、问工资），再把日子过好（沟通、面试、维权），最后把英语变成赚钱工具（带团队、谈客户、读合同）。每一级都有明确过关标准，在「路线」页。</div>
         <div class="stat-row">
           <div class="stat"><div class="v" id="mistakeCount">0</div><div class="k">错题本</div></div>
-          <div class="stat"><div class="v" id="statSent">0/6</div><div class="k">造句完成</div></div>
+          <div class="stat"><div class="v" id="statSent">0/10</div><div class="k">造句完成</div></div>
         </div>
-        <p class="desc" style="margin-top:12px">错题会自动收进错题本，在「语法」页最下面能看到。错哪补哪，不搞题海。</p>
+        <p class="desc" style="margin-top:12px">错题自动收进错题本（在「语法」页最下面）。不只是澳洲：这套底子去新西兰、加拿大、英国打工度假全通用，换的只是口音和个别词。</p>
       </div>
     </div>
     <div class="card" style="margin-top:16px">
-      <span class="tag blue">ROADMAP</span>
-      <h3>从 3.0 到 4.5，你差的就这三块</h3>
+      <span class="tag blue">YOUR GAPS</span>
+      <h3>你现在差的三块（按数据说话）</h3>
       <div class="grid" style="margin-top:10px">
-        <div><div class="t1" style="font-weight:800">① 词汇量</div><p class="desc">farm、family 这种天天见的词不认识，句子再简单也卡壳。目标先啃 300 个找工+生活高频词。</p><div class="progress grn"><i id="roadVocab" style="width:5%"></i></div></div>
-        <div><div class="t1" style="font-weight:800">② 基础语法</div><p class="desc">过去式 went、can 后面用原形、提问要带 do——就这几个小机关，考试和日常全绕不开。</p><div class="progress"><i id="roadGrammar" style="width:10%"></i></div></div>
-        <div><div class="t1" style="font-weight:800">③ 句子顺序</div><p class="desc">中文说“你什么吃”，英文必须 What do you eat? 语序练成本能，写作口语一起涨。</p><div class="progress"><i id="roadBuild" style="width:5%"></i></div></div>
+        <div><div style="font-weight:800">① 词汇量</div><p class="desc">认词是你相对的强项，但量还不够。目标：先啃 100 个本站高频词，再扩到 800。</p><div class="progress grn"><i id="roadVocab" style="width:5%"></i></div></div>
+        <div><div style="font-weight:800">② 基础语法</div><p class="desc">本站 10 课语法机关：时态、三单、比较级、时间介词……考试和日常全绕不开。</p><div class="progress"><i id="roadGrammar" style="width:5%"></i></div></div>
+        <div><div style="font-weight:800">③ 说和写（产出）</div><p class="desc">你最大的短板：认得出但说不出。靠「造句」+「口语写作」两页硬磨，把中式语序掰过来。</p><div class="progress"><i id="roadBuild" style="width:5%"></i></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROADMAP -->
+  <section id="tab-roadmap">
+    <div class="grid1">
+      <div class="level">
+        <div class="lh"><span class="tag green">LEVEL 0 · 小白启程</span><span class="band" style="color:var(--green)">Band 1.0 - 3.0</span></div>
+        <h3>先活下来：认字、听数、开口蹦词</h3>
+        <ul>
+          <li><b>单词：</b>本站「生活」「数字时间」两组先刷完——hour、tomorrow、thousand 这种词不认识，后面全白搭</li>
+          <li><b>听力：</b>「听力」页先练听数字：时薪、时间、价格，听错一个数就谈错一份工</li>
+          <li><b>开口：</b>「口语写作」页把自我介绍模板背到不用想</li>
+        </ul>
+        <div class="pass-std">🏁 过关标准：「真测 · 基础卷」拿到 7/10 以上，且能听写对 3 个价格/时间句子。预计 2-4 周（每天 15 分钟）。</div>
+      </div>
+      <div class="level">
+        <div class="lh"><span class="tag gold">LEVEL 1 · 基础打牢</span><span class="band" style="color:var(--gold)">Band 3.0 - 4.0</span></div>
+        <h3>把句子说完整：时态和语序是命根子</h3>
+        <ul>
+          <li><b>语法：</b>本站 10 课全过：be 动词、过去式 went、can+原形、提问句序、because、三单、进行时、比较级、时间介词</li>
+          <li><b>造句：</b>10 句全拼对，尤其是 What do you…? 这种提问顺序要成肌肉记忆</li>
+          <li><b>阅读：</b>Tom/Jack/Mary 三篇不看翻译能答对题</li>
+        </ul>
+        <div class="pass-std">🏁 过关标准：「真测 · 基础卷」稳定 8/10 以上。预计 1-2 个月。你现在就在这一级的中段。</div>
+      </div>
+      <div class="level">
+        <div class="lh"><span class="tag gold">LEVEL 2 · 过签找工 ⭐ 第一大关</span><span class="band" style="color:var(--gold)">Band 4.5</span></div>
+        <h3>拿下 462 的功能性英语，能在澳洲独立找工</h3>
+        <ul>
+          <li><b>场景全覆盖：</b>看懂 Seek 上的招工广告、填签证表、机场过关问答、租房看房、跟主管谈排班和工资</li>
+          <li><b>阅读：</b>本站「招聘广告」「合租广告」「机场到达」三篇全过</li>
+          <li><b>口语：</b>面试三问（介绍自己、为什么要这份工、什么时候能上班）能脱口而出</li>
+        </ul>
+        <div class="pass-std">🏁 过关标准：「真测 · 进阶卷」8/10 以上。按每天 1-2 小时算，从 3.0 到这里大约 5-8 个月——正好赶上抽签季练完。</div>
+      </div>
+      <div class="level">
+        <div class="lh"><span class="tag blue">LEVEL 3 · 能力进阶</span><span class="band" style="color:var(--blue)">Band 5.0 - 6.0</span></div>
+        <h3>从“能干活”到“能沟通、能维权”</h3>
+        <ul>
+          <li><b>复杂句：</b>because/so/but/if 把两句话缝成一句；工资被克扣时能写邮件讲清事实和诉求</li>
+          <li><b>听力：</b>听懂主管连珠炮式的排班通知、电话里房东的口音</li>
+          <li><b>词汇：</b>扩到工作行业词：建筑、餐饮、护理、仓储物流各行业的专用词（本站「高阶」组先打底）</li>
+        </ul>
+        <div class="pass-std">🏁 过关标准：「真测 · 高阶卷」6/10 以上，且能独立写一封 80 词的求职邮件。这级是你在澳洲涨薪跳槽的分水岭。</div>
+      </div>
+      <div class="level">
+        <div class="lh"><span class="tag purple">LEVEL 4 · 大神 zone</span><span class="band" style="color:var(--purple)">Band 6.5+</span></div>
+        <h3>英语变成赚钱工具，而不只是生存工具</h3>
+        <ul>
+          <li><b>谈判与表达：</b>谈薪资、谈合同条款、跟客户讲方案——语气、委婉、强调全拿捏</li>
+          <li><b>读写硬功夫：</b>读得懂合同小字和政府文件，写得出条理清楚的长邮件和报告</li>
+          <li><b>接近母语的流利：</b>俚语、笑话、会议发言不再掉线</li>
+        </ul>
+        <div class="pass-std">🏁 过关标准：「真测 · 高阶卷」稳定 8/10 以上 + 能跟外国人连续聊 10 分钟不冷场。到了这里，英语国家随便挑，回国也是稀缺人才。</div>
       </div>
     </div>
   </section>
@@ -245,13 +312,28 @@ footer{text-align:center;color:var(--dim);font-size:12.5px;line-height:1.9;paddi
 
   <!-- GRAMMAR -->
   <section id="tab-grammar">
-    <div class="grid" id="grammarGrid"></div>
+    <div class="grid1" id="grammarGrid"></div>
     <div class="card" style="margin-top:16px">
       <span class="tag red">MISTAKE BOOK</span>
       <h3>我的错题本</h3>
       <p class="desc">做错的题自动记在这里。隔两天回来看一遍，能自己讲清“为什么错”，才算真会了。</p>
       <div id="mistakeList"></div>
       <button class="btn ghost sm" id="clearMistakes" style="margin-top:12px">清空错题本</button>
+    </div>
+  </section>
+
+  <!-- LISTENING -->
+  <section id="tab-listening">
+    <div class="card">
+      <span class="tag green">LISTENING</span>
+      <h3>听力闯关 · 先听懂数字和时间</h3>
+      <p class="desc">点大按钮播放一句话（澳式发音，慢速），别看字，听完选答案。在澳洲，主管报排班、报时薪全靠耳朵，听错一个数就白干一天。每题可以反复播。</p>
+      <div id="listenBox" style="margin-top:16px"></div>
+      <div class="stat-row">
+        <div class="stat"><div class="v" id="listenScore">0/0</div><div class="k">本轮答对</div></div>
+        <div class="stat"><div class="v" id="listenBest">—</div><div class="k">历史最好</div></div>
+      </div>
+      <button class="btn ghost" id="listenRestart" style="margin-top:14px">换一组重练</button>
     </div>
   </section>
 
@@ -269,7 +351,41 @@ footer{text-align:center;color:var(--dim);font-size:12.5px;line-height:1.9;paddi
       <div class="trans" id="rTrans"></div>
       <div id="rQuiz"></div>
     </div>
-    <p class="desc" style="color:var(--sub);font-size:13px;margin-top:12px">💡 标了下划线的词点一下就能看中文 + 听发音。先猜，再点，这才是练阅读的正确姿势。</p>
+    <p class="desc" style="color:var(--sub);font-size:13px;margin-top:12px">💡 标了下划线的词点一下就能看中文 + 听发音。先猜，再点。带 L2/L3 的篇目是真实场景：招聘广告、合租广告、机场到达——到澳洲第一周全用得上。</p>
+  </section>
+
+  <!-- SPEAKING & WRITING -->
+  <section id="tab-speaking">
+    <div class="grid1">
+      <div class="card">
+        <span class="tag gold">SPEAKING</span>
+        <h3>口语场景卡 · 面试和生存必备句</h3>
+        <p class="desc">每个场景给一句“万能句”，先点喇叭听，再自己大声跟读三遍。别怕口音，澳洲人最不在乎口音，在乎你敢不敢开口。</p>
+        <div id="speakCards"></div>
+      </div>
+      <div class="card">
+        <span class="tag blue">WRITING</span>
+        <h3>写作第一课 · 三句话介绍自己</h3>
+        <p class="desc">求职、租房、交朋友，第一段自我介绍全靠这三句。把空填上（填你自己的信息），点检查看范文对照：</p>
+        <p style="line-height:2.6;font-size:15.5px;margin-top:10px">
+          My name is <input type="text" class="win" id="wName" placeholder="your name">.<br>
+          I am from <input type="text" class="win" id="wFrom" placeholder="city, country">.<br>
+          I can <input type="text" class="win" id="wCan" placeholder="speak a little English"> and I am a hard worker.
+        </p>
+        <div class="fb" id="wFb"></div>
+        <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap">
+          <button class="btn sm" id="wCheck">检查并朗读我的介绍</button>
+          <button class="btn ghost sm" id="wSample">看范文</button>
+        </div>
+        <div class="why" id="wSampleBox" style="display:none">范文：<b>My name is Alex. I am from Sichuan, China. I can drive and work hard. I am looking for a job in a warehouse.</b><br>规矩：can 后面用原形（drive 不是 driving）；介绍顺序是 名字 → 来自哪 → 会什么 → 想找什么工。四句说满，谁听了都明白。</div>
+      </div>
+      <div class="card">
+        <span class="tag red">FIX IT</span>
+        <h3>改错题 · 选出正确的那句</h3>
+        <p class="desc">下面每组都有一句中国人最容易说错的。选对的那句，写作口语一起纠。</p>
+        <div id="fixBox"></div>
+      </div>
+    </div>
   </section>
 
   <!-- BUILDER -->
@@ -288,22 +404,31 @@ footer{text-align:center;color:var(--dim);font-size:12.5px;line-height:1.9;paddi
         <button class="btn green sm" id="bNext">下一句 →</button>
       </div>
       <div class="progress" style="margin-top:16px"><i id="bProg" style="width:0%"></i></div>
-      <p class="desc" style="color:var(--sub);font-size:12.5px;margin-top:8px">进度 <b id="bProgTxt" style="color:#fff">0/6</b> · 英文的规矩：先说“谁”，再说“干啥”，提问句要把 do 提前。中国人最容易按中文语序拼，这关就是治这个的。</p>
+      <p class="desc" style="color:var(--sub);font-size:12.5px;margin-top:8px">进度 <b id="bProgTxt" style="color:#fff">0/10</b> · 英文的规矩：先说“谁”，再说“干啥”，提问句把 do 提前。后 4 句是进阶句，带 because 和比较级，拼对说明你摸到 L2 了。</p>
     </div>
   </section>
 
   <!-- QUIZ -->
   <section id="tab-quiz">
     <div class="card" id="quizIntro">
-      <span class="tag green">MINI TEST</span>
-      <h3>10 题小测 · 看看你现在在哪一档</h3>
-      <p class="desc">词汇 + 语法 + 阅读混合出题，当场判分。分数是练习估算（不是官方雅思分），用来看进步曲线刚刚好。建议每周测一次，别天天测。</p>
+      <span class="tag green">REAL TEST</span>
+      <h3>真测 · 没教过的新题，测真实水平</h3>
+      <p class="desc">这套题换了全新题库：词和句型都是没在这个站里教过的同级别内容，蒙对不算本事，测出来多少就是多少。三套卷按级别选：</p>
       <div class="stat-row">
-        <div class="stat"><div class="v">10 题</div><div class="k">题量</div></div>
-        <div class="stat"><div class="v">约 5 分钟</div><div class="k">用时</div></div>
-        <div class="stat"><div class="v" id="quizBest">—</div><div class="k">历史最好</div></div>
+        <div class="stat"><div class="v">基础卷</div><div class="k">对应 L0-L1 · Band 3-4</div></div>
+        <div class="stat"><div class="v">进阶卷</div><div class="k">对应 L2 · Band 4.5-5.5</div></div>
+        <div class="stat"><div class="v">高阶卷</div><div class="k">对应 L3-L4 · Band 6+</div></div>
       </div>
-      <button class="btn" id="quizStart" style="margin-top:18px">开始小测 →</button>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
+        <button class="btn" data-quizlevel="1">测基础卷 →</button>
+        <button class="btn ghost" data-quizlevel="2">测进阶卷 →</button>
+        <button class="btn ghost" data-quizlevel="3">测高阶卷 →</button>
+      </div>
+      <div class="stat-row">
+        <div class="stat"><div class="v" id="quizBest">—</div><div class="k">基础卷最好</div></div>
+        <div class="stat"><div class="v" id="quizBest2">—</div><div class="k">进阶卷最好</div></div>
+        <div class="stat"><div class="v" id="quizBest3">—</div><div class="k">高阶卷最好</div></div>
+      </div>
       <div id="quizHistory" style="margin-top:14px"></div>
     </div>
     <div class="card" id="quizPlay" style="display:none">
@@ -319,7 +444,7 @@ footer{text-align:center;color:var(--dim);font-size:12.5px;line-height:1.9;paddi
       <span class="tag green">RESULT</span>
       <div class="score-big" id="resScore">0/10</div>
       <h3 id="resBand" style="margin-top:6px"></h3>
-      <p class="desc" id="resTxt" style="max-width:520px;margin:10px auto 0;color:var(--sub);line-height:1.8"></p>
+      <p class="desc" id="resTxt" style="max-width:540px;margin:10px auto 0;color:var(--sub);line-height:1.8"></p>
       <div style="display:flex;gap:10px;justify-content:center;margin-top:18px;flex-wrap:wrap">
         <button class="btn ghost" id="quizRetry">再测一次</button>
         <button class="btn" id="quizToMistakes">去看错题本</button>
@@ -328,7 +453,7 @@ footer{text-align:center;color:var(--dim);font-size:12.5px;line-height:1.9;paddi
   </section>
 
   <footer>
-    IELTS 4.5 Sprint · 为澳洲 462 打工度假签准备的功能性英语训练<br>
+    English Sprint · 澳洲第一站，英语国家全通用<br>
     进度保存在本机浏览器里，换手机/清缓存会重置。每天 15 分钟，比周末突击 3 小时管用。
   </footer>
 </div>
@@ -336,8 +461,7 @@ footer{text-align:center;color:var(--dim);font-size:12.5px;line-height:1.9;paddi
 <script>
 const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
 const store={get(k,d){try{const v=localStorage.getItem('ielts45_'+k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem('ielts45_'+k,JSON.stringify(v))}catch(e){}}};
-
-/* =============== 朗读 =============== */
+function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 function speak(text,rate){
   try{
     speechSynthesis.cancel();
@@ -349,7 +473,7 @@ function speak(text,rate){
 }
 if('speechSynthesis' in window) speechSynthesis.getVoices();
 
-/* =============== 词库 =============== */
+/* =============== 词库（100 词） =============== */
 const VOCAB=[
 {w:"warehouse",ipa:"/ˈweəhaʊs/",cn:"仓库",cat:"找工",ex:"He works in a <b>warehouse</b> in Sydney.",exc:"他在悉尼一家仓库工作。"},
 {w:"casual worker",ipa:"/ˈkæʒuəl ˈwɜːkə/",cn:"临时工",cat:"找工",ex:"He is a <b>casual worker</b>, so he earns more per hour.",exc:"他是临时工，所以时薪更高。"},
@@ -398,7 +522,62 @@ const VOCAB=[
 {w:"next year",ipa:"/nekst jɪə/",cn:"明年",cat:"生活",ex:"He wants to buy a car <b>next year</b>.",exc:"他想明年买辆车。"},
 {w:"hour",ipa:"/aʊə/",cn:"小时",cat:"生活",ex:"He works 40 <b>hours</b> a week.",exc:"他一周工作40小时。"},
 {w:"get up",ipa:"/ɡet ʌp/",cn:"起床",cat:"生活",ex:"I <b>get up</b> at 5 o'clock.",exc:"我5点起床。"},
-{w:"work",ipa:"/wɜːk/",cn:"工作",cat:"生活",ex:"I <b>work</b> on a farm.",exc:"我在农场工作。"}
+{w:"work",ipa:"/wɜːk/",cn:"工作",cat:"生活",ex:"I <b>work</b> on a farm.",exc:"我在农场工作。"},
+{w:"airport",ipa:"/ˈeəpɔːt/",cn:"机场",cat:"出行",ex:"The <b>airport</b> is far from the city.",exc:"机场离市区很远。"},
+{w:"flight",ipa:"/flaɪt/",cn:"航班、飞行",cat:"出行",ex:"My <b>flight</b> is at 9 in the morning.",exc:"我的航班是早上9点。"},
+{w:"ticket",ipa:"/ˈtɪkɪt/",cn:"票",cat:"出行",ex:"I bought a <b>ticket</b> to Sydney.",exc:"我买了一张去悉尼的票。"},
+{w:"luggage",ipa:"/ˈlʌɡɪdʒ/",cn:"行李",cat:"出行",ex:"Your <b>luggage</b> is too heavy.",exc:"你的行李太重了。"},
+{w:"arrive",ipa:"/əˈraɪv/",cn:"到达",cat:"出行",ex:"We <b>arrive</b> at 6 in the evening.",exc:"我们晚上6点到。"},
+{w:"leave",ipa:"/liːv/",cn:"离开、出发",cat:"出行",ex:"The bus <b>leaves</b> at 7.",exc:"公交7点出发。"},
+{w:"hotel",ipa:"/həʊˈtel/",cn:"酒店",cat:"出行",ex:"The <b>hotel</b> is near the beach.",exc:"酒店在海滩附近。"},
+{w:"address",ipa:"/əˈdres/",cn:"地址",cat:"出行",ex:"What is your <b>address</b> in Australia?",exc:"你在澳洲的地址是什么？"},
+{w:"booking",ipa:"/ˈbʊkɪŋ/",cn:"预订",cat:"出行",ex:"I have a <b>booking</b> for two nights.",exc:"我订了两个晚上。"},
+{w:"check in",ipa:"/tʃek ɪn/",cn:"办理入住/值机",cat:"出行",ex:"<b>Check in</b> at the front desk.",exc:"在前台办理入住。"},
+{w:"train",ipa:"/treɪn/",cn:"火车",cat:"出行",ex:"The <b>train</b> to the city is fast.",exc:"去市区的火车很快。"},
+{w:"tomorrow",ipa:"/təˈmɒrəʊ/",cn:"明天",cat:"数字时间",ex:"I start work <b>tomorrow</b>.",exc:"我明天开始上班。"},
+{w:"yesterday",ipa:"/ˈjestədeɪ/",cn:"昨天",cat:"数字时间",ex:"<b>Yesterday</b> was my day off.",exc:"昨天是我休息日。"},
+{w:"hundred",ipa:"/ˈhʌndrəd/",cn:"一百",cat:"数字时间",ex:"Two <b>hundred</b> dollars a week.",exc:"每周两百美元。"},
+{w:"thousand",ipa:"/ˈθaʊznd/",cn:"一千",cat:"数字时间",ex:"Five <b>thousand</b> dollars.",exc:"五千美元。"},
+{w:"money",ipa:"/ˈmʌni/",cn:"钱",cat:"数字时间",ex:"I need more <b>money</b>.",exc:"我需要更多钱。"},
+{w:"cash",ipa:"/kæʃ/",cn:"现金",cat:"数字时间",ex:"Can I pay in <b>cash</b>?",exc:"我能付现金吗？"},
+{w:"receipt",ipa:"/rɪˈsiːt/",cn:"收据、小票",cat:"数字时间",ex:"Keep the <b>receipt</b>.",exc:"留好小票。"},
+{w:"total",ipa:"/ˈtəʊtl/",cn:"总共、总计",cat:"数字时间",ex:"The <b>total</b> is 45 dollars.",exc:"总共45美元。"},
+{w:"half",ipa:"/hɑːf/",cn:"一半",cat:"数字时间",ex:"<b>Half</b> an hour.",exc:"半小时。"},
+{w:"o'clock",ipa:"/əˈklɒk/",cn:"……点钟",cat:"数字时间",ex:"He gets up at five <b>o'clock</b>.",exc:"他五点起床。"},
+{w:"minute",ipa:"/ˈmɪnɪt/",cn:"分钟",cat:"数字时间",ex:"Wait five <b>minutes</b>.",exc:"等五分钟。"},
+{w:"price",ipa:"/praɪs/",cn:"价格",cat:"数字时间",ex:"The <b>price</b> is too high.",exc:"价格太高了。"},
+{w:"environment",ipa:"/ɪnˈvaɪrənmənt/",cn:"环境",cat:"高阶",ex:"We must protect the <b>environment</b>.",exc:"我们必须保护环境。"},
+{w:"government",ipa:"/ˈɡʌvənmənt/",cn:"政府",cat:"高阶",ex:"The <b>government</b> changed the rule.",exc:"政府改了规定。"},
+{w:"increase",ipa:"/ɪnˈkriːs/",cn:"增加、上涨",cat:"高阶",ex:"Prices <b>increase</b> every year.",exc:"价格每年上涨。"},
+{w:"decrease",ipa:"/dɪˈkriːs/",cn:"减少、下降",cat:"高阶",ex:"Costs will <b>decrease</b>.",exc:"成本会下降。"},
+{w:"research",ipa:"/rɪˈsɜːtʃ/",cn:"研究",cat:"高阶",ex:"New <b>research</b> shows it works.",exc:"新研究表明它有效。"},
+{w:"society",ipa:"/səˈsaɪəti/",cn:"社会",cat:"高阶",ex:"It is good for <b>society</b>.",exc:"这对社会有好处。"},
+{w:"education",ipa:"/ˌedʒuˈkeɪʃn/",cn:"教育",cat:"高阶",ex:"<b>Education</b> changes lives.",exc:"教育改变人生。"},
+{w:"development",ipa:"/dɪˈveləpmənt/",cn:"发展",cat:"高阶",ex:"The city is growing with fast <b>development</b>.",exc:"这座城市发展很快。"},
+{w:"important",ipa:"/ɪmˈpɔːtnt/",cn:"重要的",cat:"高阶",ex:"English is <b>important</b> for my future.",exc:"英语对我的未来很重要。"},
+{w:"different",ipa:"/ˈdɪfrənt/",cn:"不同的",cat:"高阶",ex:"Australia is <b>different</b> from China.",exc:"澳洲和中国不同。"},
+{w:"reason",ipa:"/ˈriːzn/",cn:"原因、理由",cat:"高阶",ex:"Tell me the <b>reason</b>.",exc:"告诉我原因。"},
+{w:"result",ipa:"/rɪˈzʌlt/",cn:"结果",cat:"高阶",ex:"The <b>result</b> was good.",exc:"结果很好。"},
+{w:"bus",ipa:"/bʌs/",cn:"公交车",cat:"出行",ex:"Take the <b>bus</b> to the city.",exc:"坐公交去市区。"},
+{w:"station",ipa:"/ˈsteɪʃn/",cn:"车站",cat:"出行",ex:"The <b>station</b> is near my house.",exc:"车站离我家很近。"},
+{w:"map",ipa:"/mæp/",cn:"地图",cat:"出行",ex:"Look at the <b>map</b>.",exc:"看地图。"},
+{w:"near",ipa:"/nɪə/",cn:"近的、附近",cat:"出行",ex:"The hotel is <b>near</b> the beach.",exc:"酒店在海滩附近。"},
+{w:"far",ipa:"/fɑː/",cn:"远的",cat:"出行",ex:"It is not <b>far</b>.",exc:"不远。"},
+{w:"room",ipa:"/ruːm/",cn:"房间",cat:"生活",ex:"The <b>room</b> is big and quiet.",exc:"房间大又安静。"},
+{w:"kitchen",ipa:"/ˈkɪtʃɪn/",cn:"厨房",cat:"生活",ex:"We share the <b>kitchen</b>.",exc:"我们共用厨房。"},
+{w:"breakfast",ipa:"/ˈbrekfəst/",cn:"早餐",cat:"生活",ex:"<b>Breakfast</b> is at 7.",exc:"早餐7点供应。"},
+{w:"phone",ipa:"/fəʊn/",cn:"电话、手机",cat:"生活",ex:"Call me on my <b>phone</b>.",exc:"打我手机。"},
+{w:"water",ipa:"/ˈwɔːtə/",cn:"水",cat:"生活",ex:"Drink more <b>water</b> at work.",exc:"工作时多喝水。"},
+{w:"bed",ipa:"/bed/",cn:"床",cat:"生活",ex:"One <b>bed</b> in the room.",exc:"房间里一张床。"},
+{w:"boss",ipa:"/bɒs/",cn:"老板、上司",cat:"找工",ex:"My <b>boss</b> is fair.",exc:"我老板很公平。"},
+{w:"team",ipa:"/tiːm/",cn:"团队",cat:"找工",ex:"We work as a <b>team</b>.",exc:"我们是一个团队在干。"},
+{w:"break",ipa:"/breɪk/",cn:"休息（时间）",cat:"找工",ex:"We have a 15-minute <b>break</b>.",exc:"我们休息15分钟。"},
+{w:"uniform",ipa:"/ˈjuːnɪfɔːm/",cn:"制服",cat:"找工",ex:"Wear your <b>uniform</b>.",exc:"穿上你的制服。"},
+{w:"week",ipa:"/wiːk/",cn:"周、星期",cat:"数字时间",ex:"Three days a <b>week</b>.",exc:"一周三天。"},
+{w:"month",ipa:"/mʌnθ/",cn:"月",cat:"数字时间",ex:"Next <b>month</b> I will move.",exc:"下个月我要搬家。"},
+{w:"today",ipa:"/təˈdeɪ/",cn:"今天",cat:"数字时间",ex:"<b>Today</b> is my day off.",exc:"今天我休息。"},
+{w:"tonight",ipa:"/təˈnaɪt/",cn:"今晚",cat:"数字时间",ex:"See you <b>tonight</b>.",exc:"今晚见。"},
+{w:"year",ipa:"/jɪə/",cn:"年",cat:"数字时间",ex:"One <b>year</b> in Australia.",exc:"在澳洲一年。"}
 ];
 let known=new Set(store.get('known',[]));
 let vCat='全部', vIdx=0, vUnknownOnly=false;
@@ -425,18 +604,18 @@ function buildVocabFilters(){
   $$('#vocabFilters button').forEach(b=>b.onclick=()=>{vCat=b.dataset.c;vIdx=0;buildVocabFilters();renderVocab()});
 }
 $('#vcard').onclick=()=>$('#vcard').classList.toggle('flip');
-$('#vSpeak').onclick=e=>{e.stopPropagation();speak(vList()[vIdx].w.replace(/<[^>]+>/g,''))};
+$('#vSpeak').onclick=e=>{e.stopPropagation();speak(vList()[vIdx].w)};
 $('#vPrev').onclick=()=>{const l=vList();vIdx=(vIdx-1+l.length)%l.length;renderVocab()};
 $('#vNext').onclick=()=>{const l=vList();vIdx=(vIdx+1)%l.length;renderVocab()};
 $('#vKnow').onclick=()=>{known.add(vList()[vIdx].w);store.set('known',[...known]);const l=vList();if(vIdx<l.length-1)vIdx++;renderVocab()};
 $('#vDont').onclick=()=>{known.delete(vList()[vIdx].w);store.set('known',[...known]);const l=vList();if(vIdx<l.length-1)vIdx++;renderVocab()};
-$('#vOnlyUnknown').onclick=e=>{vUnknownOnly=!vUnknownOnly;vIdx=0;e.target.textContent=vUnknownOnly?'看全部':'只看不认识的';e.target.classList.toggle('on',vUnknownOnly);renderVocab()};
+$('#vOnlyUnknown').onclick=e=>{vUnknownOnly=!vUnknownOnly;vIdx=0;e.target.textContent=vUnknownOnly?'看全部':'只看不认识的';renderVocab()};
 
 /* =============== 错题本 =============== */
 let mistakes=store.get('mistakes',[]);
 function addMistake(q,correct,why,src){
   if(mistakes.some(m=>m.q===q))return;
-  mistakes.unshift({q,correct,why,src,t:Date.now()}); if(mistakes.length>60)mistakes.length=60;
+  mistakes.unshift({q,correct,why,src,t:Date.now()}); if(mistakes.length>80)mistakes.length=80;
   store.set('mistakes',mistakes); renderMistakes(); updateTop();
 }
 function renderMistakes(){
@@ -445,45 +624,46 @@ function renderMistakes(){
 }
 $('#clearMistakes').onclick=()=>{mistakes=[];store.set('mistakes',[]);renderMistakes();updateTop()};
 
-/* =============== 语法 =============== */
+/* =============== 语法（10 课） =============== */
 const GRAMMAR=[
-{t:"be 动词：I am from China",tag:"GRAMMAR 01",why:"英文里“是/来自”要有 be 动词：I 配 <b>am</b>，he/she 配 <b>is</b>，you/they 配 <b>are</b>。坑在哪：<b>from 后面不用再加 is</b>。I am from is China 就是多塞了一个 is，am 已经把活干了。",
+{t:"be 动词：I am from China",tag:"L1 · GRAMMAR 01",why:"英文里“是/来自”要有 be 动词：I 配 <b>am</b>，he/she 配 <b>is</b>，you/they 配 <b>are</b>。坑在哪：<b>from 后面不用再加 is</b>。I am from is China 就是多塞了一个 is。",
  ex:[["I am from is China.","I am from China.（我来自中国）"],["She are a worker.","She is a worker.（她是一名工人）"]],
- qs:[
-  {q:"I <span class='blank'>___</span> from China.",o:["am","is","are"],a:0,e:"I 固定配 am，这条背死。"},
-  {q:"He <span class='blank'>___</span> a casual worker.",o:["am","is","are"],a:1,e:"He 是单数第三人称，配 is。"},
-  {q:"They <span class='blank'>___</span> farmers.",o:["am","is","are"],a:2,e:"They 是“他们”，配 are。"}]},
-{t:"过去式：Yesterday I went",tag:"GRAMMAR 02",why:"句子里出现 <b>yesterday（昨天）、last week（上周）</b>，动词就要变过去式。go 的过去式是 <b>went</b>（不规则，得单记）；work 的过去式是 worked（直接加 ed）。看到时间词，先想“这事已经发生了”。",
+ qs:[{q:"I <span class='blank'>___</span> from China.",o:["am","is","are"],a:0,e:"I 固定配 am。"},{q:"He <span class='blank'>___</span> a casual worker.",o:["am","is","are"],a:1,e:"He 配 is。"},{q:"They <span class='blank'>___</span> farmers.",o:["am","is","are"],a:2,e:"They 配 are。"}]},
+{t:"过去式：Yesterday I went",tag:"L1 · GRAMMAR 02",why:"出现 <b>yesterday、last week</b> 这类过去时间，动词要变过去式。go 的过去式是 <b>went</b>（不规则单记）；work 变 worked（加 ed）。",
  ex:[["Yesterday I go to the shop.","Yesterday I went to the shop.（昨天我去了商店）"]],
- qs:[
-  {q:"Yesterday I <span class='blank'>___</span> to the shop.",o:["go","went","goes"],a:1,e:"Yesterday 是过去时间，go 要变 went。"},
-  {q:"Last week he <span class='blank'>___</span> on a farm.",o:["work","worked","working"],a:1,e:"Last week 是过去，work 加 ed 变 worked。"},
-  {q:"He <span class='blank'>___</span> to Sydney last year.",o:["went","go","goes"],a:0,e:"last year 是过去，went 才对。"}]},
-{t:"can 后面用原形：can speak",tag:"GRAMMAR 03",why:"<b>can = 能、会</b>。规矩只有一条：can 后面的动词永远用最原始的样子，不加 ing、不加 s。can speaking、can speaks 都是错的。",
+ qs:[{q:"Yesterday I <span class='blank'>___</span> to the shop.",o:["go","went","goes"],a:1,e:"Yesterday 是过去，go → went。"},{q:"Last week he <span class='blank'>___</span> on a farm.",o:["work","worked","working"],a:1,e:"过去时间，work 加 ed。"},{q:"He <span class='blank'>___</span> to Sydney last year.",o:["went","go","goes"],a:0,e:"last year 是过去，用 went。"}]},
+{t:"can 后面用原形：can speak",tag:"L1 · GRAMMAR 03",why:"<b>can = 能、会</b>。规矩：can 后面的动词永远用原形，不加 ing、不加 s。",
  ex:[["He can speaking English.","He can speak English.（他会说英语）"]],
- qs:[
-  {q:"He can <span class='blank'>___</span> English.",o:["speaking","speak","speaks"],a:1,e:"can 后面用原形 speak，什么都不加。"},
-  {q:"I can <span class='blank'>___</span> a car.",o:["drive","driving","drives"],a:0,e:"can 后面用原形 drive。"},
-  {q:"She can <span class='blank'>___</span> fruit fast.",o:["picks","picking","pick"],a:2,e:"can 后面用原形 pick。"}]},
-{t:"提问句序：What do you eat?",tag:"GRAMMAR 04",why:"中文问“你吃什么”，是把“什么”塞在中间。英文必须把疑问词提到最前面，再跟一个帮手 <b>do</b>：<b>What do you eat?</b> do 就是提问的信号，听见 do 就知道这是个问句。",
+ qs:[{q:"He can <span class='blank'>___</span> English.",o:["speaking","speak","speaks"],a:1,e:"can 后面原形 speak。"},{q:"I can <span class='blank'>___</span> a car.",o:["drive","driving","drives"],a:0,e:"can 后面原形 drive。"},{q:"She can <span class='blank'>___</span> fruit fast.",o:["picks","picking","pick"],a:2,e:"can 后面原形 pick。"}]},
+{t:"提问句序：What do you eat?",tag:"L1 · GRAMMAR 04",why:"英文提问要把疑问词放最前面，再跟帮手 <b>do</b>：<b>What do you eat?</b> 中文的“你什么吃”直译过去，老外听不懂。",
  ex:[["You what eat?","What do you eat?（你吃什么？）"],["Where you work?","Where do you work?（你在哪工作？）"]],
- qs:[
-  {q:"<span class='blank'>___</span> do you work?",o:["Where","What time is","Who is"],a:0,e:"问地点用 Where，句型：Where do you work?"},
-  {q:"What <span class='blank'>___</span> you eat?",o:["are","do","is"],a:1,e:"提问句中间要放帮手 do。"},
-  {q:"<span class='blank'>___</span> do you get up?",o:["Where is","What","What time"],a:2,e:"问几点用 What time：What time do you get up?"}]},
-{t:"because 因果：because he is…",tag:"GRAMMAR 05",why:"<b>because = 因为</b>，后面要跟一整句话（谁 + 是/做 + 什么）。He earns 33 dollars <b>because he is a casual worker</b>——前半句是结果，后半句是原因。阅读题问“为什么”，就去原文找 because。",
+ qs:[{q:"<span class='blank'>___</span> do you work?",o:["Where","What time is","Who is"],a:0,e:"问地点用 Where。"},{q:"What <span class='blank'>___</span> you eat?",o:["are","do","is"],a:1,e:"提问中间放帮手 do。"},{q:"<span class='blank'>___</span> do you get up?",o:["Where is","What","What time"],a:2,e:"问几点用 What time。"}]},
+{t:"because 因果：because he is…",tag:"L1 · GRAMMAR 05",why:"<b>because = 因为</b>，后面跟一整句话。阅读题问“为什么”，就回原文找 because。",
  ex:[["He earns 33 dollars. He is a casual worker.","He earns 33 dollars because he is a casual worker.（他时薪33，因为他是临时工）"]],
- qs:[
-  {q:"He is saving money <span class='blank'>___</span> he wants to buy a car.",o:["but","because","so"],a:1,e:"“攒钱”是因为“想买车”，因果用 because。"},
-  {q:"She earns more because she <span class='blank'>___</span> a casual worker.",o:["am","is","are"],a:1,e:"she 配 is：because she is…"},
-  {q:"为什么 Jack 时薪有 33 美元？",o:["因为他喜欢这份工作","因为他是临时工","因为他周末上班"],a:1,e:"原文：because he is a casual worker——因为他是临时工。"}]}
+ qs:[{q:"He is saving money <span class='blank'>___</span> he wants to buy a car.",o:["but","because","so"],a:1,e:"“攒钱”是因为“想买车”，用 because。"},{q:"She earns more because she <span class='blank'>___</span> a casual worker.",o:["am","is","are"],a:1,e:"she 配 is。"},{q:"为什么 Jack 时薪有 33 美元？",o:["因为他喜欢这份工作","因为他是临时工","因为他周末上班"],a:1,e:"原文 because he is a casual worker。"}]},
+{t:"三单：He works / She earns",tag:"L2 · GRAMMAR 06",why:"主语是 <b>he、she、it 或一个人名</b>时，一般现在时动词要加 <b>s</b>：He work<b>s</b>、She earn<b>s</b>。这是雅思口语写作扣分重灾区，偏偏又最简单：看见 he/she 就给动词戴个 s 的帽子。",
+ ex:[["He work in Sydney.","He works in Sydney.（他在悉尼工作）"],["Mary earn 28 dollars.","Mary earns 28 dollars.（玛丽挣28美元）"]],
+ qs:[{q:"She <span class='blank'>___</span> in a cafe.",o:["work","works","working"],a:1,e:"She 是三单，works。"},{q:"Tom <span class='blank'>___</span> up at 5.",o:["get","gets","getting"],a:1,e:"Tom 三单，gets。"},{q:"They <span class='blank'>___</span> fruit every day.",o:["picks","pick","picking"],a:1,e:"They 不是三单，用原形 pick，这题选 pick。注意选项顺序已打乱，自己判断。",fix:true}]},
+{t:"进行时：He is working now",tag:"L2 · GRAMMAR 07",why:"正在发生的动作：<b>be + 动词ing</b>。He is working now（他正在工作）。now、right now、Look! 都是它的信号词。和一般现在时区别：works 是天天干，is working 是此刻正干。",
+ ex:[["He works now.（此刻）","He is working now.（他现在正在工作）"]],
+ qs:[{q:"Look! Jack <span class='blank'>___</span> the boxes.",o:["is moving","moves yesterday","move"],a:0,e:"Look! 表示此刻正在发生：is moving。"},{q:"Right now, she <span class='blank'>___</span> to her manager.",o:["is talking","talks last week","talk yesterday"],a:0,e:"Right now 是现在进行时：is talking。"},{q:"He usually <span class='blank'>___</span> at 7, but today he is late.",o:["starts","is start","starting"],a:0,e:"usually 是习惯，用一般现在时 starts；别被后面的 is 带偏。"}]},
+{t:"将来：want to / will",tag:"L2 · GRAMMAR 08",why:"说将来的计划两个武器：<b>want to + 原形</b>（想要做）和 <b>will + 原形</b>（将会）。He wants to buy a car（注意 wants 是三单，to 后面原形不变）。will 后面永远原形。",
+ ex:[["He will buys a car.","He will buy a car.（他将会买一辆车）"],["I want to working here.","I want to work here.（我想在这工作）"]],
+ qs:[{q:"I want to <span class='blank'>___</span> in Australia.",o:["working","work","works"],a:1,e:"want to 后面原形 work。"},{q:"She will <span class='blank'>___</span> tomorrow.",o:["starts","start","starting"],a:1,e:"will 后面原形 start。"},{q:"He wants to <span class='blank'>___</span> money.",o:["save","saves","saving"],a:0,e:"wants to 后面原形 save。"}]},
+{t:"比较级：cheaper / more expensive",tag:"L3 · GRAMMAR 09",why:"比大小：短词加 <b>er</b>（cheap→cheaper），长词前面加 <b>more</b>（more expensive），后面常跟 <b>than</b>（比）。租房、比工资、比物价天天用，L3 必备。",
+ ex:[["This room is more cheap than that one.","This room is cheaper than that one.（这间比那间便宜）"]],
+ qs:[{q:"Brisbane is <span class='blank'>___</span> than Sydney.",o:["cheaper","cheap","more cheap"],a:0,e:"cheap 是短词，加 er：cheaper。"},{q:"This hotel is <span class='blank'>___</span> than that one.",o:["expensiver","more expensive","expensive"],a:1,e:"expensive 是长词，用 more expensive。"},{q:"Fruit picking is <span class='blank'>___</span> than warehouse work.",o:["hard","harder","more hard"],a:1,e:"hard 短词加 er：harder。"}]},
+{t:"时间介词：at / in / on",tag:"L2 · GRAMMAR 10",why:"时间前面的小词有规矩：<b>at</b> 接钟点（at 7 o'clock），<b>in</b> 接上午/下午/晚上和月份（in the morning、in May），<b>on</b> 接星期和日期（on Monday）。填表、约时间、看排班全靠它。",
+ ex:[["I start work in 7 o'clock.","I start work at 7 o'clock.（我7点上班）"]],
+ qs:[{q:"He starts work <span class='blank'>___</span> 7 in the morning.",o:["at","on","in of"],a:0,e:"钟点用 at。"},{q:"She does not work <span class='blank'>___</span> Mondays.",o:["at","in","on"],a:2,e:"星期用 on。"},{q:"The harvest starts <span class='blank'>___</span> May.",o:["on","at","in"],a:2,e:"月份用 in。"}]}
 ];
+/* 修正三单第3题答案索引（选项为 picks/pick/picking，正确 pick=1） */
+GRAMMAR[5].qs[2].a=1; delete GRAMMAR[5].qs[2].fix;
 let grammarDone=store.get('grammarDone',{});
 function renderGrammar(){
-  $('#grammarGrid').style.gridTemplateColumns='1fr';
   $('#grammarGrid').innerHTML=GRAMMAR.map((g,gi)=>{
     const done=(grammarDone[gi]||[]).length;
-    return '<div class="card"><span class="tag gold">'+g.tag+'</span><h3>'+g.t+'</h3><div class="why">'+g.why+'</div>'
+    return '<div class="card"><span class="tag '+(g.tag.startsWith('L1')?'gold':(g.tag.startsWith('L2')?'blue':'purple'))+'">'+g.tag+'</span><h3>'+g.t+'</h3><div class="why">'+g.why+'</div>'
     + g.ex.map(e=>'<p class="exline"><span class="bad">'+e[0]+'</span><br><span class="good">✔ '+e[1]+'</span></p>').join('')
     + g.qs.map((q,qi)=>'<div class="qbox" data-g="'+gi+'" data-q="'+qi+'"><div class="q">'+q.q+'</div><div class="opts">'+q.o.map((o,oi)=>'<button class="opt" data-o="'+oi+'">'+o+'</button>').join('')+'</div><div class="fb"></div></div>').join('')
     + '<p class="desc" style="color:var(--sub);font-size:12.5px;margin-top:10px">本课进度：<b style="color:#fff" id="gprog-'+gi+'">'+done+'/'+g.qs.length+'</b> 题答对</p></div>';
@@ -507,6 +687,44 @@ function renderGrammar(){
   });
 }
 
+/* =============== 听力 =============== */
+const LISTEN=[
+{t:"The shift starts at six thirty tomorrow morning.",q:"你听到的上班时间是？",o:["明天早上 6:30","明天早上 7:30","今晚 6:30"],a:0,e:"six thirty = 6:30。听时间先抓数字，再听 morning/evening 定上午下午。"},
+{t:"He earns twenty-eight dollars an hour.",q:"他时薪多少？",o:["38 美元","28 美元","18 美元"],a:1,e:"twenty-eight = 28。twenty 是二十，eight 是八，合起来 28。"},
+{t:"Your flight leaves at nine fifteen.",q:"航班几点起飞？",o:["9:50","9:15","5:15"],a:1,e:"nine fifteen = 9:15。fifteen(15) 和 fifty(50) 最容易听混：-teen 重音在后，-ty 重音在前。"},
+{t:"The room is one hundred and eighty dollars a week.",q:"这间房一周多少钱？",o:["108 美元","880 美元","180 美元"],a:2,e:"one hundred and eighty = 180。hundred 是“百”，别漏听。"},
+{t:"The train to the airport takes forty minutes.",q:"坐火车去机场要多久？",o:["14 分钟","40 分钟","4 分钟"],a:1,e:"forty = 40，fourteen = 14，这对是听力头号陷阱。"},
+{t:"He does not work on Sundays.",q:"你听到的意思对的是？",o:["他周日不上班","他周日加班","他讨厌周日"],a:0,e:"does not work on Sundays = 周日不上班。does not 就是“不”，别脑补成不喜欢。"},
+{t:"A ticket to Melbourne costs ninety-nine dollars.",q:"去墨尔本的票多少钱？",o:["90 美元","19 美元","99 美元"],a:2,e:"ninety-nine = 99。ninety 是九十，后面再跟 nine。"},
+{t:"Please bring your passport and visa on Monday.",q:"周一要带什么？",o:["护照和签证","工资单和合同","行李和车票"],a:0,e:"passport 护照、visa 签证，都是过签找工的命根子词。"}
+];
+let listenAnswered=0, listenCorrect=0;
+function renderListening(){
+  const items=shuffle(LISTEN).slice(0,6);
+  listenAnswered=0; listenCorrect=0;
+  $('#listenScore').textContent='0/0';
+  $('#listenBest').textContent=store.get('listenBest',null)!==null?store.get('listenBest')+'/6':'—';
+  $('#listenBox').innerHTML=items.map((it,i)=>'<div class="qbox" data-li="'+i+'"><button class="big-play" data-play="'+i+'">🔊 播放第 '+(i+1)+' 句（可反复听）</button><div class="q" style="margin-top:12px">'+it.q+'</div><div class="opts">'+it.o.map((o,oi)=>'<button class="opt" data-o="'+oi+'">'+o+'</button>').join('')+'</div><div class="fb"></div></div>').join('');
+  $$('#listenBox [data-play]').forEach(b=>b.onclick=()=>speak(items[+b.dataset.play].t,0.75));
+  $$('#listenBox .qbox').forEach(box=>{
+    const it=items[+box.dataset.li];
+    box.querySelectorAll('.opt').forEach(btn=>btn.onclick=()=>{
+      const oi=+btn.dataset.o, fb=box.querySelector('.fb');
+      box.querySelectorAll('.opt').forEach(b=>b.disabled=true);
+      box.querySelectorAll('.opt')[it.a].classList.add('right');
+      listenAnswered++;
+      if(oi===it.a){listenCorrect++;fb.className='fb show ok';fb.innerHTML='✅ 听对了。原句：<b>'+it.t+'</b><br>'+it.e}
+      else{btn.classList.add('wrong');fb.className='fb show no';fb.innerHTML='❌ 没听清。原句：<b>'+it.t+'</b><br>'+it.e;addMistake('听力：'+it.t,it.o[it.a],it.e,'听力闯关')}
+      $('#listenScore').textContent=listenCorrect+'/'+listenAnswered;
+      if(listenAnswered===6){
+        const best=store.get('listenBest',0);
+        if(listenCorrect>best){store.set('listenBest',listenCorrect);$('#listenBest').textContent=listenCorrect+'/6'}
+      }
+    });
+  });
+}
+$('#listenRestart').onclick=renderListening;
+
 /* =============== 阅读 =============== */
 const GLOSS={
  farm:{cn:"农场",ex:"on a farm 在农场"}, warehouse:{cn:"仓库",ex:"in a warehouse 在仓库"}, casual:{cn:"临时的",ex:"casual worker 临时工"},
@@ -514,27 +732,35 @@ const GLOSS={
  weekend:{cn:"周末",ex:"on weekends 在周末"}, weekends:{cn:"周末（复数）",ex:"does not work on weekends 周末不上班"},
  family:{cn:"家人",ex:"misses his family 想念家人"}, cafe:{cn:"咖啡馆",ex:"works in a cafe 在咖啡馆工作"}, manager:{cn:"经理、主管",ex:"her manager 她的经理"},
  travel:{cn:"旅行",ex:"wants to travel 想去旅行"}, reef:{cn:"礁",ex:"the Great Barrier Reef 大堡礁"}, saving:{cn:"正在攒钱",ex:"is saving money 在攒钱"},
- because:{cn:"因为",ex:"because he is… 因为他是……"}
+ because:{cn:"因为",ex:"because he is… 因为他是……"}, wanted:{cn:"招聘、急需",ex:"Workers wanted 招聘工人"}, strong:{cn:"强壮的",ex:"must be strong 必须强壮"},
+ careful:{cn:"小心的、仔细的",ex:"be careful 小心点"}, bills:{cn:"账单（水电网）",ex:"bills included 包账单"}, included:{cn:"包含在内的",ex:"bills included 含账单"},
+ station:{cn:"车站",ex:"near the station 离车站近"}, quiet:{cn:"安静的",ex:"a quiet room 安静的房间"}, available:{cn:"有空的、可用的",ex:"available now 现在可入住"},
+ pets:{cn:"宠物",ex:"no pets 不能养宠物"}, officer:{cn:"官员（这里指海关人员）",ex:"the officer asked 海关人员问"},
+ stay:{cn:"停留、待",ex:"How long will you stay? 你待多久？"}, fly:{cn:"坐飞机、飞",ex:"fly to Cairns 飞往凯恩斯"},
+ tour:{cn:"旅行团、游览",ex:"a boat tour 乘船游览"}, beach:{cn:"海滩",ex:"at the beach 在海滩"}, plan:{cn:"计划",ex:"my travel plan 我的旅行计划"}
 };
 const READINGS=[
-{t:"Tom 在农场",text:'Tom works on a <span class="w" data-w="farm">farm</span> in Australia. He gets up at 5 o\'clock every day. He <span class="w" data-w="earns">earns</span> 30 dollars an hour and works 40 hours a week. He likes his job but he misses his <span class="w" data-w="family">family</span>.',
+{t:"L1 · Tom 在农场",text:'Tom works on a <span class="w" data-w="farm">farm</span> in Australia. He gets up at 5 o\'clock every day. He <span class="w" data-w="earns">earns</span> 30 dollars an hour and works 40 hours a week. He likes his job but he misses his <span class="w" data-w="family">family</span>.',
  trans:"汤姆在澳大利亚的农场工作。他每天早上5点起床，时薪30美元，一周工作40个小时。他喜欢他的工作，但是想念他的家人。",
- qs:[
-  {q:"Tom 几点起床？",o:["4点","5点","6点"],a:1,e:"原文：gets up at 5 o'clock。"},
-  {q:"Tom 一周工作多少小时？",o:["30小时","35小时","40小时"],a:2,e:"原文：works 40 hours a week。"},
-  {q:"Tom 想念什么？",o:["他的家乡菜","他的家人","他的朋友"],a:1,e:"misses his family——想念家人。family 是“家人”，不是“家”。"}]},
-{t:"Jack 在仓库",text:'Jack works in a <span class="w" data-w="warehouse">warehouse</span> in Sydney. He starts work at 7 in the morning and finishes at 3 in the afternoon. He <span class="w" data-w="earns">earns</span> 33 dollars an hour <span class="w" data-w="because">because</span> he is a <span class="w" data-w="casual">casual</span> <span class="w" data-w="worker">worker</span>. He does not work on <span class="w" data-w="weekends">weekends</span>. He is <span class="w" data-w="saving">saving</span> money because he wants to buy a car next year.',
+ qs:[{q:"Tom 几点起床？",o:["4点","5点","6点"],a:1,e:"原文：gets up at 5 o'clock。"},{q:"Tom 一周工作多少小时？",o:["30小时","35小时","40小时"],a:2,e:"原文：works 40 hours a week。"},{q:"Tom 想念什么？",o:["他的家乡菜","他的家人","他的朋友"],a:1,e:"misses his family——family 是“家人”，不是“家”。"}]},
+{t:"L1 · Jack 在仓库",text:'Jack works in a <span class="w" data-w="warehouse">warehouse</span> in Sydney. He starts work at 7 in the morning and finishes at 3 in the afternoon. He <span class="w" data-w="earns">earns</span> 33 dollars an hour <span class="w" data-w="because">because</span> he is a <span class="w" data-w="casual">casual</span> <span class="w" data-w="worker">worker</span>. He does not work on <span class="w" data-w="weekends">weekends</span>. He is <span class="w" data-w="saving">saving</span> money because he wants to buy a car next year.',
  trans:"杰克在悉尼一家仓库工作。他早上7点上班，下午3点下班。因为他是临时工，所以时薪33美元。他周末不上班。他正在攒钱，因为他想明年买一辆车。",
- qs:[
-  {q:"Jack 在哪里上班？",o:["农场","仓库","咖啡馆"],a:1,e:"warehouse = 仓库。"},
-  {q:"Jack 为什么时薪有 33 美元？",o:["因为他是临时工","因为他经验丰富","因为他周末上班"],a:0,e:"because he is a casual worker——因为他是临时工。"},
-  {q:"Jack 攒钱想干什么？",o:["买房","买车","回国"],a:1,e:"wants to buy a car next year——明年买车。"}]},
-{t:"Mary 在咖啡馆",text:'Mary works in a <span class="w" data-w="cafe">cafe</span> in Melbourne. She starts work at 8 in the morning and finishes at 2 in the afternoon. She <span class="w" data-w="earns">earns</span> 28 dollars an hour. She works on <span class="w" data-w="weekends">weekends</span> but she does not work on Mondays. Her <span class="w" data-w="manager">manager</span> is kind. She is <span class="w" data-w="saving">saving</span> money <span class="w" data-w="because">because</span> she wants to <span class="w" data-w="travel">travel</span> to the Great Barrier <span class="w" data-w="reef">Reef</span>.',
+ qs:[{q:"Jack 在哪里上班？",o:["农场","仓库","咖啡馆"],a:1,e:"warehouse = 仓库。"},{q:"Jack 为什么时薪有 33 美元？",o:["因为他是临时工","因为他经验丰富","因为他周末上班"],a:0,e:"because he is a casual worker——因为他是临时工。"},{q:"Jack 攒钱想干什么？",o:["买房","买车","回国"],a:1,e:"wants to buy a car next year——明年买车。"}]},
+{t:"L1 · Mary 在咖啡馆",text:'Mary works in a <span class="w" data-w="cafe">cafe</span> in Melbourne. She starts work at 8 in the morning and finishes at 2 in the afternoon. She <span class="w" data-w="earns">earns</span> 28 dollars an hour. She works on <span class="w" data-w="weekends">weekends</span> but she does not work on Mondays. Her <span class="w" data-w="manager">manager</span> is kind. She is <span class="w" data-w="saving">saving</span> money <span class="w" data-w="because">because</span> she wants to <span class="w" data-w="travel">travel</span> to the Great Barrier <span class="w" data-w="reef">Reef</span>.',
  trans:"玛丽在墨尔本一家咖啡馆工作。她早上8点上班，下午2点下班，时薪28美元。她周末上班，但周一不上班。她的经理人很好。她正在攒钱，因为她想去大堡礁旅行。",
- qs:[
-  {q:"Mary 几点下班？",o:["下午2点","下午3点","下午5点"],a:0,e:"finishes at 2 in the afternoon。"},
-  {q:"Mary 哪天不上班？",o:["周六","周日","周一"],a:2,e:"does not work on Mondays——周一不上班。别被 weekends 绕晕。"},
-  {q:"Mary 攒钱想干什么？",o:["买车","去大堡礁旅行","开咖啡馆"],a:1,e:"wants to travel to the Great Barrier Reef。"}]}
+ qs:[{q:"Mary 几点下班？",o:["下午2点","下午3点","下午5点"],a:0,e:"finishes at 2 in the afternoon。"},{q:"Mary 哪天不上班？",o:["周六","周日","周一"],a:2,e:"does not work on Mondays = 周一不上班。"},{q:"Mary 攒钱想干什么？",o:["买车","去大堡礁旅行","开咖啡馆"],a:1,e:"wants to travel to the Great Barrier Reef。"}]},
+{t:"L2 · 招聘广告",text:'<span class="w" data-w="warehouse">Warehouse</span> Workers <span class="w" data-w="wanted">Wanted</span> — Brisbane. $32 per hour. Monday to Friday, 6 am to 2 pm. You must be <span class="w" data-w="strong">strong</span> and <span class="w" data-w="careful">careful</span>. <span class="w" data-w="casual">Casual</span> work, weekly pay. Call Mr Brown after 9 am.',
+ trans:"招聘仓库工人——布里斯班。时薪32美元。周一到周五，早上6点到下午2点。你必须强壮、仔细。临时工，周结工资。上午9点后打电话给布朗先生。",
+ qs:[{q:"这份工一周上几天班？",o:["5天","6天","7天"],a:0,e:"Monday to Friday = 周一到周五，5天。"},{q:"对工人有什么要求？",o:["要有经验","要强壮、仔细","要会开车"],a:1,e:"must be strong and careful。"},{q:"工资怎么结？",o:["月结","周结","日结"],a:1,e:"weekly pay = 周结。"}]},
+{t:"L2 · 合租广告",text:'Room for rent in Perth. $180 a week, <span class="w" data-w="bills">bills</span> <span class="w" data-w="included">included</span>. Near the train <span class="w" data-w="station">station</span>. <span class="w" data-w="quiet">Quiet</span> room, share kitchen with two workers. <span class="w" data-w="available">Available</span> now. No <span class="w" data-w="pets">pets</span>.',
+ trans:"珀斯有房出租。每周180美元，含水电网费。靠近火车站。房间安静，与两位工人合用厨房。现在可入住。不能养宠物。",
+ qs:[{q:"房租含什么？",o:["含家具","含水电网账单","含一日三餐"],a:1,e:"bills included = 账单包含在内。"},{q:"房子位置怎么样？",o:["靠海滩","靠火车站","靠机场"],a:1,e:"Near the train station。"},{q:"有什么限制？",o:["不能做饭","不能养宠物","不能晚归"],a:1,e:"No pets = 不能养宠物。"}]},
+{t:"L2 · 机场到达",text:'Wei arrived in Sydney at 10 in the morning. At the airport, an <span class="w" data-w="officer">officer</span> looked at his passport and asked, "How long will you <span class="w" data-w="stay">stay</span> in Australia?" Wei said, "About one year. I have a working holiday visa, and I have 6,000 dollars in my bank." The officer smiled and said, "Welcome to Australia."',
+ trans:"卫上午10点到达悉尼。在机场，一名海关人员看了他的护照，问：“你会在澳洲待多久？”卫说：“大约一年。我有打工度假签证，我的银行里有6000美元。”海关人员笑着说：“欢迎来到澳大利亚。”",
+ qs:[{q:"海关问了什么？",o:["你来干什么工作","你待多久","你住哪里"],a:1,e:"How long will you stay? = 你待多久？机场必考句。"},{q:"Wei 准备待多久？",o:["半年","大约一年","三个月"],a:1,e:"About one year。"},{q:"Wei 银行里有多少钱？",o:["5,000 美元","6,000 美元","1,000 美元"],a:1,e:"6,000 dollars in my bank。听数看数都要准。"}]},
+{t:"L2 · 一个旅行计划",text:'Emma has a <span class="w" data-w="plan">plan</span>. Next Monday she will <span class="w" data-w="fly">fly</span> from Sydney to Cairns. On Tuesday she will take a boat <span class="w" data-w="tour">tour</span> to the Great Barrier <span class="w" data-w="reef">Reef</span>. On Wednesday she will rest at the <span class="w" data-w="beach">beach</span>. She will come back to Sydney on Friday <span class="w" data-w="because">because</span> her new job starts the next Monday.',
+ trans:"艾玛有一个计划。下周一她将从悉尼飞往凯恩斯。周二她会乘船游览大堡礁。周三她在海滩休息。周五她回悉尼，因为她的新工作下周一开始。",
+ qs:[{q:"Emma 周二干什么？",o:["飞往凯恩斯","乘船游大堡礁","在海滩休息"],a:1,e:"On Tuesday she will take a boat tour。"},{q:"她为什么周五就回悉尼？",o:["没钱了","新工作下周一开始","想家了"],a:1,e:"because her new job starts the next Monday。找 because 就找到原因。"}]}
 ];
 let rIdx=0;
 function renderReadingTabs(){
@@ -564,93 +790,180 @@ function renderReading(){
     pop.querySelector('.pe').textContent=g.ex;
     $('#popSpeak').onclick=ev=>{ev.stopPropagation();speak(w.textContent)};
     pop.style.display='block';
-    const x=Math.min(e.clientX,innerWidth-260), y=Math.min(e.clientY+14,innerHeight-170);
-    pop.style.left=x+'px'; pop.style.top=y+'px'; e.stopPropagation();
+    pop.style.left=Math.min(e.clientX,innerWidth-260)+'px'; pop.style.top=Math.min(e.clientY+14,innerHeight-170)+'px'; e.stopPropagation();
   });
 }
 document.addEventListener('click',e=>{if(!e.target.closest('#wordPop'))$('#wordPop').style.display='none'});
 $('#rTransBtn').onclick=()=>$('#rTrans').classList.toggle('show');
 $('#rSpeak').onclick=()=>speak(READINGS[rIdx].text.replace(/<[^>]+>/g,''),0.72);
 
-/* =============== 造句 =============== */
+/* =============== 口语写作 =============== */
+const SPEAK=[
+{s:"🧑 自我介绍（面试开场）",cn:"名字→来自哪→想找什么工，三句话站稳",en:"My name is Zhou. I am from China. I am looking for a job. I can work hard."},
+{s:"💼 为什么想要这份工",cn:"被问 Why do you want this job? 就这么答",en:"I want this job because I want to save money and learn English. I am a hard worker."},
+{s:"🕐 什么时候能上班",cn:"能越早越好，这是加分项",en:"I can start tomorrow. I can work on weekends too."},
+{s:"🛬 机场过关",cn:"海关问 How long will you stay? 标准答法",en:"About one year. I have a working holiday visa."},
+{s:"🏨 酒店入住 / 出去玩必备",cn:"订了房、问价格、刷卡，全靠这几句",en:"I have a booking for two nights. How much is it? Can I pay by card?"},
+{s:"🧭 问路",cn:"人生地不熟时的保命句，先说 Excuse me 有礼貌",en:"Excuse me, how can I get to the station?"},
+{s:"🍔 点餐买东西",cn:"would like 比 I want 礼貌得多，老外都这么说",en:"I would like a coffee, please. And a sandwich, thank you."},
+{s:"🏠 看房租房",cn:"打电话问合租，第一句就问还在不在",en:"Hello, I am calling about the room. Is it still available?"},
+{s:"🤒 请假",cn:"生病上不了班，提前打电话，别失联",en:"I am sick today. I am sorry, I cannot come to work."},
+{s:"💰 问工资",cn:"面试必问，别不好意思，问清时薪和结薪",en:"How much is the wage? Is it weekly pay?"}
+];
+function renderSpeak(){
+  $('#speakCards').innerHTML=SPEAK.map((c,i)=>'<div class="phrase"><button class="spk" data-sp="'+i+'">🔊</button><div><div class="pen">'+c.s+'<br><span style="color:var(--gold2)">'+c.en+'</span></div><div class="pcn">'+c.cn+' · 点喇叭听一遍，再大声跟读3遍</div></div></div>').join('');
+  $$('#speakCards [data-sp]').forEach(b=>b.onclick=()=>speak(SPEAK[+b.dataset.sp].en,0.75));
+}
+$('#wCheck').onclick=()=>{
+  const n=$('#wName').value.trim()||'Alex', f=$('#wFrom').value.trim()||'China', c=$('#wCan').value.trim()||'work hard';
+  const s='My name is '+n+'. I am from '+f+'. I can '+c+' and I am a hard worker.';
+  const fb=$('#wFb'); fb.className='fb show ok';
+  fb.innerHTML='你的介绍：<b>'+s+'</b><br>检查自己的：① can 后面是不是原形？② 单词拼写？念出来听一遍，顺了就过关。';
+  speak(s,0.78);
+};
+$('#wSample').onclick=()=>{const b=$('#wSampleBox');b.style.display=b.style.display==='none'?'block':'none'};
+const FIX=[
+{q:"哪句是对的？",o:["I am from is China.","I am from China."],a:1,e:"am 已经是“是”，from 后面别再加 is。"},
+{q:"哪句是对的？",o:["Yesterday I went to the shop.","Yesterday I go to the shop."],a:0,e:"Yesterday 是过去，went 才对。"},
+{q:"哪句是对的？",o:["He can speaks English.","He can speak English."],a:1,e:"can 后面用原形 speak。"},
+{q:"哪句是对的？",o:["You what eat?","What do you eat?"],a:1,e:"疑问词 What 提前，再加帮手 do。"},
+{q:"哪句是对的？",o:["She works in a cafe.","She work in a cafe."],a:0,e:"She 是三单，works 要加 s。"},
+{q:"哪句是对的？",o:["I will buy a car next year.","I will buys a car next year."],a:0,e:"will 后面用原形 buy。"}
+];
+function renderFix(){
+  $('#fixBox').innerHTML=FIX.map((q,qi)=>'<div class="qbox" data-q="'+qi+'"><div class="q">'+q.q+'</div><div class="opts">'+q.o.map((o,oi)=>'<button class="opt" data-o="'+oi+'">'+o+'</button>').join('')+'</div><div class="fb"></div></div>').join('');
+  $$('#fixBox .qbox').forEach(box=>{
+    const q=FIX[+box.dataset.q];
+    box.querySelectorAll('.opt').forEach(btn=>btn.onclick=()=>{
+      const oi=+btn.dataset.o, fb=box.querySelector('.fb');
+      box.querySelectorAll('.opt').forEach(b=>b.disabled=true);
+      box.querySelectorAll('.opt')[q.a].classList.add('right');
+      if(oi===q.a){fb.className='fb show ok';fb.innerHTML='✅ 对了。'+q.e}
+      else{btn.classList.add('wrong');fb.className='fb show no';fb.innerHTML='❌ 错了。'+q.e;addMistake(q.q+'（'+q.o.join(' / ')+'）',q.o[q.a],q.e,'改错题')}
+    });
+  });
+}
+
+/* =============== 造句（10 句） =============== */
 const SENTENCES=[
 {cn:"我来自中国。",t:["I","am","from","China."],why:"am 已经是“是”了，from 后面别再加 is。"},
 {cn:"你吃什么？",t:["What","do","you","eat?"],why:"疑问词 What 最前面，帮手 do 紧跟其后。"},
 {cn:"昨天我去了商店。",t:["Yesterday","I","went","to","the","shop."],why:"Yesterday 一出现，go 就得变 went。"},
 {cn:"他会说英语。",t:["He","can","speak","English."],why:"can 后面 speak 用原形，不加 ing。"},
 {cn:"他是悉尼一家仓库的临时工。",t:["He","is","a","casual","worker","in","Sydney."],why:"先说“他是临时工”，再补地点 in Sydney，英文先主干后细节。"},
-{cn:"我想明年买一辆车。",t:["I","want","to","buy","a","car","next","year."],why:"want to buy = 想要买；next year 放最后，英文时间喜欢收尾。"}
+{cn:"我想明年买一辆车。",t:["I","want","to","buy","a","car","next","year."],why:"want to buy = 想要买；next year 放最后，英文时间喜欢收尾。"},
+{cn:"她现在正在咖啡馆工作。",t:["She","is","working","in","a","cafe","now."],why:"now 是“正在”的信号：is + working，这就是进行时。"},
+{cn:"这间房比那间便宜。",t:["This","room","is","cheaper","than","that","one."],why:"cheap 短词加 er 变 cheaper，后面带 than 才是“比”。"},
+{cn:"他挣得多，因为他加班。",t:["He","earns","more","because","he","works","overtime."],why:"两个 earns/works 都是三单加 s；because 把原因缝在后面——这是 L3 的缝句功夫。"},
+{cn:"明天我将飞往悉尼。",t:["Tomorrow","I","will","fly","to","Sydney."],why:"will 后面原形 fly；Tomorrow 打头，明天干啥一清二楚。"}
 ];
 let bIdx=0, bPicked=[], bDone=new Set(store.get('bDone',[]));
-function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 function renderBuilder(){
   const s=SENTENCES[bIdx];
   $('#bCn').textContent='第 '+(bIdx+1)+' 句：'+s.cn+(bDone.has(bIdx)?' ✅ 已完成':'');
-  $('#bChips').innerHTML=shuffle(s.t).map((w,i)=>'<button class="chip" data-w="'+w+'">'+w+'</button>').join('');
+  $('#bChips').innerHTML=shuffle(s.t).map(w=>'<button class="chip" data-w="'+w+'">'+w+'</button>').join('');
   bPicked=[]; drawPicked();
   $('#bFb').className='fb';
-  $$('#bChips .chip').forEach(c=>c.onclick=()=>{c.classList.add('used');bPicked.push({w:c.dataset.w,el:c});drawPicked()});
-  $('#bProgTxt').textContent=bDone.size+'/6';
-  $('#bProg').style.width=(bDone.size/6*100)+'%';
-  $('#statSent').textContent=bDone.size+'/6';
+  $$('#bChips .chip').forEach(c=>c.onclick=()=>{if(c.classList.contains('used'))return;c.classList.add('used');bPicked.push({w:c.dataset.w,el:c});drawPicked()});
+  renderBuilderProg();
 }
 function drawPicked(){
   $('#bBuilt').innerHTML=bPicked.length?bPicked.map(p=>'<span>'+p.w+'</span>').join(' '):'<span style="color:var(--dim);font-weight:500">点下面的单词，按英文顺序把句子拼出来…</span>';
 }
+function renderBuilderProg(){$('#bProgTxt').textContent=bDone.size+'/'+SENTENCES.length;$('#bProg').style.width=(bDone.size/SENTENCES.length*100)+'%';$('#statSent').textContent=bDone.size+'/'+SENTENCES.length;updateRoad();updateTop()}
 $('#bUndo').onclick=()=>{const p=bPicked.pop();if(p)p.el.classList.remove('used');drawPicked()};
 $('#bClear').onclick=()=>{bPicked.forEach(p=>p.el.classList.remove('used'));bPicked=[];drawPicked()};
 $('#bCheck').onclick=()=>{
   const s=SENTENCES[bIdx], fb=$('#bFb');
   const got=bPicked.map(p=>p.w).join(' '), want=s.t.join(' ');
-  if(got===want){fb.className='fb show ok';fb.innerHTML='✅ 拼对了！'+s.why+'<br><b>'+want+'</b>';speak(want,0.75);bDone.add(bIdx);store.set('bDone',[...bDone]);renderBuilderProg()}
+  if(got===want){fb.className='fb show ok';fb.innerHTML='✅ 拼对了！'+s.why+'<br><b>'+want+'</b>';speak(want,0.75);bDone.add(bIdx);store.set('bDone',[...bDone]);$('#bCn').textContent='第 '+(bIdx+1)+' 句：'+s.cn+' ✅ 已完成';renderBuilderProg()}
   else{fb.className='fb show no';fb.innerHTML='❌ 顺序还不对。提示：'+s.why;addMistake('造句：'+s.cn,want,s.why,'造句训练')}
 };
-function renderBuilderProg(){$('#bProgTxt').textContent=bDone.size+'/6';$('#bProg').style.width=(bDone.size/6*100)+'%';$('#statSent').textContent=bDone.size+'/6';updateRoad();updateTop()}
 $('#bNext').onclick=()=>{bIdx=(bIdx+1)%SENTENCES.length;renderBuilder()};
 
-/* =============== 小测 =============== */
-const QUIZ_BANK=[
-{q:"单词：wage 是什么意思？",o:["签证","工资","仓库"],a:1,e:"wage = 工资。"},
-{q:"单词：warehouse 是什么意思？",o:["农场","仓库","咖啡馆"],a:1,e:"warehouse = 仓库。"},
-{q:"单词：casual worker 是什么意思？",o:["全职员工","临时工","老板"],a:1,e:"casual worker = 临时工。"},
-{q:"单词：visa 是什么意思？",o:["护照","签证","保险"],a:1,e:"visa = 签证，passport 才是护照。"},
-{q:"单词：prove 是什么意思？",o:["证明","提交","申请"],a:0,e:"prove = 证明。"},
-{q:"单词：at least 是什么意思？",o:["最多","至少","马上"],a:1,e:"at least = 至少。"},
-{q:"I ___ from China.",o:["am","is","are"],a:0,e:"I 配 am。"},
-{q:"Yesterday I ___ to the shop.",o:["go","went","goes"],a:1,e:"Yesterday 是过去，go → went。"},
-{q:"He can ___ English.",o:["speaking","speaks","speak"],a:2,e:"can 后面用原形 speak。"},
-{q:"___ do you get up?",o:["What time","Where is","Who"],a:0,e:"问几点：What time do you get up?"},
-{q:"What ___ you eat?",o:["is","do","are"],a:1,e:"提问句要放帮手 do。"},
-{q:"He earns 33 dollars ___ he is a casual worker.",o:["but","because","or"],a:1,e:"因果用 because。"},
-{q:"阅读：Mary works in a cafe. She earns 28 dollars an hour. She does not work on Mondays. —— Mary 周几不上班？",o:["周一","周六","周日"],a:0,e:"does not work on Mondays = 周一不上班。"},
-{q:"阅读：Jack is saving money because he wants to buy a car next year. —— Jack 攒钱是为了？",o:["买房","买车","旅行"],a:1,e:"buy a car next year = 明年买车。"},
-{q:"单词：employer 是什么意思？",o:["员工","雇主/老板","经理"],a:1,e:"employer = 雇主，employee 才是员工。"},
-{q:"单词：per hour 是什么意思？",o:["每天","每小时","每周"],a:1,e:"per hour = 每小时。"}
-];
-let quiz={list:[],step:0,score:0};
-function bandOf(score){
-  if(score<=2)return['约 2.5','地基还在打。先把单词和 be 动词啃下来，别急着刷题。'];
-  if(score<=4)return['约 3.0','和你现在的估分吻合。词汇是最大短板，每天 10 个词，一个月就能明显不一样。'];
-  if(score===5)return['约 3.5','开始上道了。because 因果句和过去式再稳一稳，就摸到 4.0。'];
-  if(score<=7)return['约 4.0','离目标只剩半步。把错题本清掉，再测一次大概率就过线。'];
-  if(score===8)return['约 4.5 🎉','达到 462 功能性英语的估算线了！保持手感，别停。'];
-  if(score===9)return['约 5.0','稳稳过线。接下来可以练听力和开口说了。'];
-  return['约 5.5','这套题对你已经太简单了，去挑战真题吧。'];
+/* =============== 真测（三套新卷） =============== */
+const QUIZ_BANKS={
+1:[
+{q:"单词：airport 是什么意思？",o:["火车站","机场","港口"],a:1,e:"airport = 机场。"},
+{q:"单词：tomorrow 是什么意思？",o:["昨天","今天","明天"],a:2,e:"tomorrow = 明天，yesterday 才是昨天。"},
+{q:"单词：flight 是什么意思？",o:["航班","行李","车票"],a:0,e:"flight = 航班。"},
+{q:"She ___ a teacher in a small school.",o:["am","is","are"],a:1,e:"She 配 is。"},
+{q:"They ___ students from China.",o:["is","am","are"],a:2,e:"They 配 are。"},
+{q:"I ___ coffee every morning.",o:["drink","drank","drinking now"],a:0,e:"every morning 是习惯，用原形 drink。" },
+{q:"He ___ TV at home last night.",o:["watch","watches","watched"],a:2,e:"last night 是过去，watched。"},
+{q:"“两百美元”英语数字是？",o:["two thousand","two hundred","twenty hundred"],a:1,e:"two hundred = 200。"},
+{q:"cheap 的反义词是？",o:["expensive","easy","heavy"],a:0,e:"cheap 便宜 ↔ expensive 贵。"},
+{q:"___ is your name?",o:["Where","What","When"],a:1,e:"问名字：What is your name?"},
+{q:"She can ___ a bike very well.",o:["rides","riding","ride"],a:2,e:"can 后面原形 ride。"},
+{q:"We ___ from China.",o:["is","are","am"],a:1,e:"We 配 are。"}
+],
+2:[
+{q:"Right now, the workers ___ boxes onto the truck.",o:["are loading","loads yesterday","load last week"],a:0,e:"Right now 是正在进行：are loading。"},
+{q:"My manager ___ at 6 every morning.",o:["arrive","arrives","arriving now every day"],a:1,e:"manager 是三单，arrives。"},
+{q:"This share house is ___ than that hotel.",o:["cheaper","cheap","more cheap"],a:0,e:"cheaper than = 比……便宜。"},
+{q:"The course starts ___ Monday ___ 9 o'clock.",o:["in / at","on / at","at / on"],a:1,e:"星期用 on，钟点用 at。"},
+{q:"It is raining hard, ___ I will stay at home today.",o:["because","but","so"],a:2,e:"前面是原因，后面是结果，用 so（所以）。because 后面要跟原因，别用反。"},
+{q:"读广告：$35 per hour, Monday to Friday, weekly pay. —— 这份工一周上几天？",o:["5 天","6 天","35 天"],a:0,e:"Monday to Friday = 5 天。"},
+{q:"He has worked in this warehouse ___ 2023.",o:["for","since","at"],a:1,e:"自从某个时间点用到现在：since + 年份。这是高阶时态的门口。"},
+{q:"I want to ___ a room near the station.",o:["rent","rents","renting"],a:0,e:"want to 后面原形 rent（租）。"},
+{q:"Look at the sky! It ___ rain.",o:["will","rains yesterday","rained"],a:0,e:"看天色判断将来：will rain。will + 原形。"},
+{q:"“bills included” 在租房广告里是什么意思？",o:["不含账单","账单另付","含水电网账单"],a:2,e:"included = 包含在内。"},
+{q:"单词 forty 是数字几？",o:["14","40","44"],a:1,e:"forty = 40，fourteen = 14，别混。"},
+{q:"She earns more ___ she works overtime.",o:["so","because","but"],a:1,e:"“挣得多”是因为“加班”，原因在后用 because。"}
+],
+3:[
+{q:"单词：increase 是什么意思？",o:["减少","增加","保持"],a:1,e:"increase = 增加；decrease 才是减少。"},
+{q:"单词：research 是什么意思？",o:["研究","结果","原因"],a:0,e:"research = 研究，result 才是结果。"},
+{q:"If it rains tomorrow, we ___ at home and rest.",o:["will stay","stayed","stays yesterday"],a:0,e:"if 说将来假设，主句用 will：will stay。这是谈天气、谈计划的高频句型。"},
+{q:"She has lived in Perth ___ two years.",o:["since","for","at"],a:1,e:"一段时间长度用 for + 时间段（for two years）；since 后面跟时间点。"},
+{q:"读短文：Recycling can reduce waste and protect the environment. More people in the city are recycling now than before. —— 这段话主要说？",o:["回收没用","回收能减少垃圾、保护环境，参与的人变多了","城市人不喜欢回收"],a:1,e:"reduce waste 减少垃圾、protect the environment 保护环境，是主旨句。做阅读先抓第一句。"},
+{q:"The meeting was postponed because the manager was ill. postponed 是？",o:["取消了","推迟了","提前了"],a:1,e:"postponed = 推迟。正式邮件常见词。"},
+{q:"Of the three cities, Sydney is ___ to live in.",o:["the most expensive","more expensive","expensivest"],a:0,e:"三者以上比较用 the most expensive（最高级）。"},
+{q:"Many young people move to big cities ___ better jobs.",o:["because","for","so"],a:1,e:"for + 名词表示“为了”，move for better jobs = 为了更好的工作。这是 6 分以上句型。"},
+{q:"正式邮件开头称呼一位姓 Smith 的男士，用哪个？",o:["Hi Smith,","Dear Mr Smith,","Hello Mr.,"],a:1,e:"正式写法 Dear Mr Smith,，姓前加 Mr，别直呼其名。"},
+{q:"“政府出台了新规”里 government 是？",o:["公司","政府","学校"],a:1,e:"government = 政府。高阶阅读天天见。"},
+{q:"Choose the best paraphrase（换句话说）：The price went up. =",o:["The price decreased.","The price increased.","The price stayed the same."],a:1,e:"went up = 上涨 = increased。能把一句话换种说法说出来，是 6.5 的标志。"},
+{q:"He speaks English ___ than before because he practises every day.",o:["more fluently","fluentlier","most fluent yesterday"],a:0,e:"fluently 是长副词，比较级用 more fluently。"}
+]};
+let quiz={list:[],step:0,score:0,level:1};
+function bandOf(score,level){
+  if(level===1){
+    if(score<=3)return['约 2.5','基础词和 be 动词还不牢。先把「单词」的数字时间组和语法第 1 课啃下来，别急。'];
+    if(score<=5)return['约 3.0','和你当前估分吻合。地基在打了，词汇量是主要短板。'];
+    if(score<=7)return['约 3.5','基础上道了。把语法 10 课刷完，你能摸到 4.0。'];
+    if(score<=9)return['约 4.0','基础很稳了！可以开始测进阶卷，看离 4.5 还差什么。'];
+    return['4.0-4.5 之间','基础卷难不倒你了，去挑战进阶卷，那才是 4.5 的真实考场。'];
+  }
+  if(level===2){
+    if(score<=3)return['约 3.0-3.5','进阶卷还吃力，三单和时间介词先补，回到语法 6-10 课。'];
+    if(score<=5)return['约 4.0','离过签线还差半步，错题本清掉再测会明显不一样。'];
+    if(score<=7)return['约 4.5 🎉','摸到 462 功能性英语的估算线了！保持这个水平到考试就是过。'];
+    if(score<=9)return['约 5.0-5.5','稳过签，还有余力应付面试。下一步去练高阶卷。'];
+    return['约 5.5+','进阶卷满分级。去高阶卷看看你离大神还差多远。'];
+  }
+  if(score<=3)return['约 4.5 或以下','高阶卷考的是学术词和复杂句，没吃透很正常——你还在 L2 阶段，这卷是给你看山顶的。'];
+  if(score<=5)return['约 5.0-5.5','高阶内容开始有感觉了，since/for、if 句型再练练。'];
+  if(score<=7)return['约 6.0','已经摸到大神区的门了。坚持读英文材料，这个水平在澳洲能谈工资谈合同了。'];
+  if(score<=9)return['约 6.5 🎉','大神区！这个水平去哪个英语国家都不怵。'];
+  return['约 7.0','高阶卷接近满分。雅思真题对你已经是正常难度了。'];
 }
 function renderQuizHistory(){
   const h=store.get('quizHistory',[]);
-  $('#quizBest').textContent=h.length?Math.max(...h.map(x=>x.score))+'/10':'—';
-  $('#statQuiz').textContent=h.length?h[h.length-1].score+'/10':'—';
-  $('#quizHistory').innerHTML=h.length?h.slice(-5).reverse().map(x=>'<div class="listline"><span>'+x.date+'</span><b>'+x.score+'/10 · '+x.band+'</b></div>').join(''):'';
+  const best=l=>{const f=h.filter(x=>(x.level||1)===l);return f.length?Math.max(...f.map(x=>x.score))+'/10':'—'};
+  $('#quizBest').textContent=best(1); $('#quizBest2').textContent=best(2); $('#quizBest3').textContent=best(3);
+  const last=h[h.length-1];
+  $('#statQuiz').textContent=last?last.score+'/10':'—';
+  $('#quizHistory').innerHTML=h.length?h.slice(-5).reverse().map(x=>'<div class="listline"><span>'+x.date+' · '+['','基础卷','进阶卷','高阶卷'][x.level||1]+'</span><b>'+x.score+'/10 · '+x.band+'</b></div>').join(''):'';
 }
-$('#quizStart').onclick=()=>{
-  quiz={list:shuffle(QUIZ_BANK).slice(0,10),step:0,score:0};
+$$('#quizIntro [data-quizlevel]').forEach(b=>b.onclick=()=>{
+  const lv=+b.dataset.quizlevel;
+  quiz={list:shuffle(QUIZ_BANKS[lv]).slice(0,10),step:0,score:0,level:lv};
   $('#quizIntro').style.display='none'; $('#quizResult').style.display='none'; $('#quizPlay').style.display='block';
   drawQuiz();
-};
+});
 function drawQuiz(){
   const q=quiz.list[quiz.step];
-  $('#quizStep').textContent='第 '+(quiz.step+1)+'/10 题';
+  $('#quizStep').textContent=['','基础卷','进阶卷','高阶卷'][quiz.level]+' · 第 '+(quiz.step+1)+'/10 题';
   $('#quizScore').textContent=quiz.score;
   $('#quizProg').style.width=(quiz.step/10*100)+'%';
   $('#quizQ').innerHTML=q.q;
@@ -661,7 +974,7 @@ function drawQuiz(){
     $$('#quizOpts .opt').forEach(b=>b.disabled=true);
     $$('#quizOpts .opt')[q.a].classList.add('right');
     if(oi===q.a){quiz.score++;fb.className='fb show ok';fb.innerHTML='✅ 对了。'+q.e}
-    else{btn.classList.add('wrong');fb.className='fb show no';fb.innerHTML='❌ 错了。'+q.e;addMistake(q.q.replace(/<[^>]+>/g,''),q.o[q.a],q.e,'小测')}
+    else{btn.classList.add('wrong');fb.className='fb show no';fb.innerHTML='❌ 错了。'+q.e;addMistake(q.q.replace(/<[^>]+>/g,''),q.o[q.a],q.e,'真测·'+['','基础卷','进阶卷','高阶卷'][quiz.level])}
     $('#quizScore').textContent=quiz.score;
     $('#quizNext').style.display='block';
     $('#quizNext').textContent=quiz.step===9?'看结果 →':'下一题 →';
@@ -669,24 +982,24 @@ function drawQuiz(){
 }
 $('#quizNext').onclick=()=>{
   if(quiz.step<9){quiz.step++;drawQuiz();return}
-  const [band,txt]=bandOf(quiz.score);
+  const [band,txt]=bandOf(quiz.score,quiz.level);
   const h=store.get('quizHistory',[]);
-  h.push({date:new Date().toLocaleDateString('zh-CN'),score:quiz.score,band});
+  h.push({date:new Date().toLocaleDateString('zh-CN'),score:quiz.score,band,level:quiz.level});
   store.set('quizHistory',h);
   $('#quizPlay').style.display='none'; $('#quizResult').style.display='block';
   $('#resScore').textContent=quiz.score+'/10';
   $('#resBand').textContent='估算水平：'+band;
-  $('#resTxt').textContent=txt+'（练习估算，不是官方雅思成绩）';
+  $('#resTxt').textContent=txt+'（练习估算，不是官方雅思成绩；新题测出来的才算数。）';
   renderQuizHistory(); updateTop();
 };
-$('#quizRetry').onclick=()=>$('#quizStart').click();
+$('#quizRetry').onclick=()=>{$('#quizResult').style.display='none';$('#quizIntro').style.display='block'};
 $('#quizToMistakes').onclick=()=>switchTab('grammar');
 
-/* =============== 今日任务 / 顶部 =============== */
+/* =============== 今日任务 / 进度 =============== */
 const TASKS=[
-{t1:"背 10 个单词",t2:"去「单词」页，点“认识了”标记，专挑不认识的磨。"},
-{t1:"做对 1 课语法题",t2:"去「语法」页选一课，把题做完，错的看“为什么”。"},
-{t1:"读 1 篇短文并答题",t2:"去「阅读」页，先猜生词意思，再点下划线词核对。"}
+{t1:"背 10 个单词",t2:"去「单词」页刷一组，点“认识了”标记，专挑不认识的磨。"},
+{t1:"听 1 组听力题",t2:"去「听力」页，6 句先盲听再选，听错的看原句跟读。"},
+{t1:"产出练一次",t2:"造句拼 2 句，或在「口语写作」跟读一个场景。光认不说，永远卡在 3.0。"}
 ];
 function todayKey(){return new Date().toLocaleDateString('zh-CN')}
 function renderTasks(){
@@ -711,16 +1024,16 @@ function updateRoad(){
   $('#roadVocab').style.width=Math.max(5,known.size/VOCAB.length*100)+'%';
   const gTotal=GRAMMAR.reduce((s,g)=>s+g.qs.length,0), gDone=Object.values(grammarDone).reduce((s,a)=>s+a.length,0);
   $('#roadGrammar').style.width=Math.max(5,gTotal?gDone/gTotal*100:0)+'%';
-  $('#roadBuild').style.width=Math.max(5,bDone.size/6*100)+'%';
+  $('#roadBuild').style.width=Math.max(5,bDone.size/SENTENCES.length*100)+'%';
 }
 function updateTop(){
-  const p=Math.round(Math.min(100, known.size/VOCAB.length*55 + bDone.size/6*20 + (store.get('quizHistory',[]).length?Math.max(...store.get('quizHistory',[]).map(x=>x.score))/10*25:0)));
+  const h=store.get('quizHistory',[]);
+  const bestAll=h.length?Math.max(...h.map(x=>x.score)):0;
+  const p=Math.round(Math.min(100, known.size/VOCAB.length*40 + bDone.size/SENTENCES.length*20 + Object.values(grammarDone).reduce((s,a)=>s+a.length,0)/30*15 + bestAll/10*25));
   const ring=$('#ringTop'); ring.style.setProperty('--p',p); ring.querySelector('span').textContent=p+'%';
   $('#statWords').textContent=known.size;
   renderQuizHistory();
 }
-
-/* =============== 导航 =============== */
 function switchTab(name){
   $$('#mainNav button').forEach(b=>b.classList.toggle('on',b.dataset.tab===name));
   $$('section').forEach(s=>s.classList.toggle('on',s.id==='tab-'+name));
@@ -729,7 +1042,7 @@ function switchTab(name){
 $$('#mainNav button').forEach(b=>b.onclick=()=>switchTab(b.dataset.tab));
 
 /* =============== 初始化 =============== */
-buildVocabFilters(); renderVocab(); renderGrammar(); renderMistakes(); renderReadingTabs(); renderReading(); renderBuilder(); renderTasks(); updateRoad(); updateTop();
+buildVocabFilters(); renderVocab(); renderGrammar(); renderMistakes(); renderListening(); renderReadingTabs(); renderReading(); renderSpeak(); renderFix(); renderBuilder(); renderTasks(); updateRoad(); updateTop();
 </script>
 </body>
 </html>
