@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0a0f1e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>雅思 4.5 冲刺舱 · IELTS Sprint</title>
+<style>
+:root{
+  --bg:#070b16; --bg2:#0b1226; --card:rgba(255,255,255,.055); --card2:rgba(255,255,255,.09);
+  --line:rgba(255,255,255,.10); --txt:#eef2ff; --sub:#9aa7c7; --dim:#67739a;
+  --gold:#f5c451; --gold2:#ffdf8e; --green:#2fe6a8; --red:#ff6b7a; --blue:#5ea8ff;
+  --grad:linear-gradient(120deg,#f5c451,#ff9d5c 55%,#ff6b7a);
+  --grad2:linear-gradient(120deg,#2fe6a8,#5ea8ff);
+  --r:20px; --shadow:0 18px 50px rgba(0,0,0,.45);
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI",sans-serif;min-height:100vh;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;background:
+  radial-gradient(900px 480px at 85% -5%,rgba(245,196,81,.16),transparent 60%),
+  radial-gradient(800px 500px at -10% 30%,rgba(47,230,168,.10),transparent 60%),
+  radial-gradient(700px 600px at 110% 70%,rgba(94,168,255,.12),transparent 60%),
+  linear-gradient(180deg,var(--bg2),var(--bg));z-index:-2}
+body::after{content:"";position:fixed;inset:0;background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:26px 26px;z-index:-1;pointer-events:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px 110px}
+/* ---------- header ---------- */
+header{padding:44px 0 8px;text-align:center;animation:fadeUp .7s ease both}
+.kicker{display:inline-block;font-size:12px;letter-spacing:.35em;color:var(--gold);border:1px solid rgba(245,196,81,.35);padding:7px 16px 7px 20px;border-radius:999px;background:rgba(245,196,81,.06)}
+h1{font-size:clamp(38px,7vw,64px);font-weight:900;line-height:1.08;margin:20px 0 6px;background:linear-gradient(180deg,#fff,#c9d4f5);-webkit-background-clip:text;background-clip:text;color:transparent}
+h1 .hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-sub{color:var(--sub);font-size:15px;line-height:1.7;max-width:640px;margin:8px auto 0}
+.hero-sub b{color:var(--gold2)}
+.band-row{display:flex;gap:14px;justify-content:center;align-items:stretch;margin:28px auto 4px;flex-wrap:wrap}
+.band-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px 22px;min-width:150px;backdrop-filter:blur(8px);box-shadow:var(--shadow)}
+.band-card .lab{font-size:11px;letter-spacing:.22em;color:var(--dim)}
+.band-card .num{font-size:34px;font-weight:900;margin-top:4px}
+.band-card .num small{font-size:14px;color:var(--sub);font-weight:600}
+.band-arrow{display:flex;align-items:center;font-size:22px;color:var(--gold)}
+.ring-wrap{display:flex;flex-direction:column;align-items:center;gap:6px;justify-content:center;padding:8px 10px}
+.ring{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:15px;background:conic-gradient(var(--gold) calc(var(--p)*1%),rgba(255,255,255,.08) 0);position:relative}
+.ring::before{content:"";position:absolute;inset:5px;border-radius:50%;background:#0d1428}
+.ring span{position:relative}
+.ring-lab{font-size:11px;color:var(--dim);letter-spacing:.15em}
+/* ---------- nav ---------- */
+nav{position:sticky;top:12px;z-index:50;display:flex;gap:8px;justify-content:center;margin:22px auto 6px;background:rgba(10,15,30,.72);border:1px solid var(--line);padding:8px;border-radius:999px;backdrop-filter:blur(14px);width:max-content;max-width:100%;overflow-x:auto;box-shadow:var(--shadow)}
+nav button{border:0;background:transparent;color:var(--sub);font-size:14px;font-weight:700;padding:10px 18px;border-radius:999px;cursor:pointer;white-space:nowrap;transition:.25s;font-family:inherit}
+nav button.on{background:var(--grad);color:#20130a;box-shadow:0 8px 24px rgba(245,166,81,.35)}
+nav button:not(.on):hover{color:#fff;background:rgba(255,255,255,.07)}
+/* ---------- sections/cards ---------- */
+section{display:none;padding-top:22px}
+section.on{display:block;animation:fadeUp .45s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;backdrop-filter:blur(8px);box-shadow:var(--shadow)}
+.card h3{font-size:17px;margin-bottom:6px}
+.card .desc{color:var(--sub);font-size:13.5px;line-height:1.75}
+.tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.12em;padding:4px 10px;border-radius:999px;margin-bottom:12px}
+.tag.gold{color:var(--gold);background:rgba(245,196,81,.12);border:1px solid rgba(245,196,81,.3)}
+.tag.green{color:var(--green);background:rgba(47,230,168,.1);border:1px solid rgba(47,230,168,.3)}
+.tag.blue{color:var(--blue);background:rgba(94,168,255,.1);border:1px solid rgba(94,168,255,.3)}
+.tag.red{color:var(--red);background:rgba(255,107,122,.1);border:1px solid rgba(255,107,122,.3)}
+.btn{border:0;cursor:pointer;font-family:inherit;font-weight:800;font-size:14px;padding:12px 22px;border-radius:14px;background:var(--grad);color:#221306;transition:.2s;box-shadow:0 10px 26px rgba(245,150,60,.28)}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:rgba(255,255,255,.07);color:var(--txt);border:1px solid var(--line);box-shadow:none}
+.btn.green{background:var(--grad2);color:#04241a}
+.btn.sm{padding:8px 14px;font-size:13px;border-radius:10px}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.task{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px dashed rgba(255,255,255,.09)}
+.task:last-child{border-bottom:0}
+.chk{width:26px;height:26px;border-radius:9px;border:2px solid rgba(255,255,255,.25);flex:none;display:grid;place-items:center;cursor:pointer;font-size:15px;color:transparent;transition:.2s;margin-top:2px;background:rgba(255,255,255,.04)}
+.chk.done{background:var(--grad2);border-color:transparent;color:#04241a}
+.task .t1{font-weight:700;font-size:15px}
+.task .t2{color:var(--sub);font-size:12.5px;margin-top:3px;line-height:1.6}
+.stat-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+.stat{flex:1;min-width:96px;background:rgba(255,255,255,.045);border:1px solid var(--line);border-radius:14px;padding:12px;text-align:center}
+.stat .v{font-size:22px;font-weight:900;color:var(--gold2)}
+.stat .k{font-size:11px;color:var(--dim);margin-top:3px;letter-spacing:.1em}
+.progress{height:10px;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden;margin-top:10px}
+.progress i{display:block;height:100%;border-radius:99px;background:var(--grad);transition:width .6s cubic-bezier(.2,.9,.3,1)}
+.progress.grn i{background:var(--grad2)}
+/* ---------- vocab ---------- */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.filters button{border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--sub);padding:8px 16px;border-radius:999px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;transition:.2s}
+.filters button.on{background:#fff;color:#0b1020;border-color:#fff}
+.vocab-stage{perspective:1200px;max-width:560px;margin:0 auto}
+.vcard{position:relative;height:300px;cursor:pointer;transform-style:preserve-3d;transition:transform .65s cubic-bezier(.3,.7,.3,1)}
+.vcard.flip{transform:rotateY(180deg)}
+.vface{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:24px;padding:28px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border:1px solid var(--line);box-shadow:var(--shadow)}
+.vface.front{background:linear-gradient(150deg,rgba(245,196,81,.14),rgba(255,255,255,.04) 55%)}
+.vface.back{background:linear-gradient(150deg,rgba(47,230,168,.13),rgba(255,255,255,.04) 55%);transform:rotateY(180deg)}
+.vword{font-size:clamp(30px,6vw,42px);font-weight:900;letter-spacing:.01em}
+.vipa{color:var(--gold2);font-size:15px;margin-top:8px;font-family:ui-monospace,Menlo,monospace}
+.vcat{position:absolute;top:18px;left:20px;font-size:11px;letter-spacing:.18em;color:var(--dim)}
+.vhint{position:absolute;bottom:16px;font-size:12px;color:var(--dim)}
+.vcn{font-size:30px;font-weight:900;color:var(--green)}
+.vex{margin-top:14px;color:var(--sub);font-size:14px;line-height:1.8}
+.vex b{color:#fff}
+.vctrl{display:flex;gap:10px;justify-content:center;margin-top:18px;flex-wrap:wrap}
+.spk{background:rgba(255,255,255,.08);border:1px solid var(--line);color:#fff;width:44px;height:44px;border-radius:50%;font-size:18px;cursor:pointer;transition:.2s;flex:none}
+.spk:hover{background:rgba(245,196,81,.25)}
+/* ---------- quiz bits ---------- */
+.qbox{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:16px;padding:18px;margin-top:14px}
+.qbox .q{font-size:16px;font-weight:700;line-height:1.7}
+.qbox .q .blank{color:var(--gold);border-bottom:2px dashed var(--gold);padding:0 8px}
+.opts{display:grid;gap:9px;margin-top:14px}
+.opt{border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--txt);padding:12px 16px;border-radius:12px;text-align:left;font-size:15px;cursor:pointer;font-family:inherit;transition:.18s;font-weight:600}
+.opt:hover{border-color:rgba(245,196,81,.6);background:rgba(245,196,81,.08)}
+.opt.right{border-color:var(--green);background:rgba(47,230,168,.14);color:#d2ffee}
+.opt.wrong{border-color:var(--red);background:rgba(255,107,122,.13);color:#ffd9dd}
+.opt:disabled{cursor:default;opacity:.92}
+.fb{margin-top:12px;font-size:13.5px;line-height:1.75;border-radius:12px;padding:12px 14px;display:none}
+.fb.show{display:block;animation:fadeUp .3s ease}
+.fb.ok{background:rgba(47,230,168,.1);border:1px solid rgba(47,230,168,.35);color:#c9ffec}
+.fb.no{background:rgba(255,107,122,.09);border:1px solid rgba(255,107,122,.35);color:#ffe0e4}
+.why{background:rgba(245,196,81,.07);border:1px solid rgba(245,196,81,.25);border-radius:14px;padding:14px 16px;font-size:13.5px;line-height:1.85;color:#f3e9cf;margin-top:12px}
+.why b{color:var(--gold2)}
+.exline{font-size:15px;line-height:2;margin-top:8px}
+.exline .bad{color:var(--red);text-decoration:line-through;text-decoration-thickness:2px}
+.exline .good{color:var(--green);font-weight:800}
+/* ---------- reading ---------- */
+.passage{font-size:16.5px;line-height:2.05;color:#dbe4ff}
+.passage .w{border-bottom:1px dotted rgba(245,196,81,.65);cursor:pointer;color:var(--gold2);font-weight:700}
+.pop{position:fixed;z-index:99;background:#131c38;border:1px solid rgba(245,196,81,.45);border-radius:14px;padding:12px 14px;box-shadow:var(--shadow);max-width:250px;display:none}
+.pop .pw{font-weight:900;font-size:16px}
+.pop .pm{color:var(--green);font-size:13.5px;margin-top:2px}
+.pop .pe{color:var(--sub);font-size:12.5px;margin-top:5px;line-height:1.6}
+.trans{display:none;margin-top:14px;background:rgba(94,168,255,.07);border:1px solid rgba(94,168,255,.3);border-radius:14px;padding:14px 16px;line-height:1.9;font-size:14.5px;color:#d6e7ff}
+.trans.show{display:block}
+/* ---------- builder ---------- */
+.built{min-height:56px;border:2px dashed rgba(245,196,81,.4);border-radius:14px;padding:12px 14px;font-size:17px;font-weight:700;display:flex;flex-wrap:wrap;gap:7px;align-items:center;background:rgba(245,196,81,.04)}
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}
+.chip{border:1px solid var(--line);background:#fff;color:#101736;font-weight:800;font-size:15px;padding:9px 15px;border-radius:999px;cursor:pointer;transition:.15s;font-family:inherit}
+.chip:hover{transform:translateY(-2px)}
+.chip.used{opacity:.25;pointer-events:none}
+/* ---------- misc ---------- */
+.score-big{font-size:52px;font-weight:900;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.listline{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px dashed rgba(255,255,255,.08);font-size:13.5px;color:var(--sub)}
+.listline b{color:#fff}
+.mistake{font-size:13px;color:#ffb9c1;background:rgba(255,107,122,.07);border:1px solid rgba(255,107,122,.25);border-radius:10px;padding:9px 12px;margin-top:8px;line-height:1.6}
+footer{text-align:center;color:var(--dim);font-size:12.5px;line-height:1.9;padding:10px 0 0}
+.bottom-pad{height:8px}
+@media(max-width:640px){
+  header{padding-top:30px}
+  nav{position:fixed;top:auto;bottom:calc(10px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);margin:0;width:calc(100% - 20px);justify-content:flex-start}
+  .wrap{padding-bottom:104px}
+  .vcard{height:320px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="kicker">IELTS · TARGET BAND 4.5</span>
+    <h1>雅思 <span class="hl">4.5</span> 冲刺舱</h1>
+    <p class="hero-sub">不为出国留学，就为一张<b>澳洲打工度假签证</b>的入场券。<br>每天 15 分钟，把功能性英语从“会讲两句”练到能过签、能找工。</p>
+    <div class="band-row">
+      <div class="band-card"><div class="lab">当前估分 CURRENT</div><div class="num">3.0 <small>/ 9.0</small></div></div>
+      <div class="band-arrow">➜</div>
+      <div class="band-card"><div class="lab">目标 TARGET</div><div class="num" style="color:var(--gold)">4.5 <small>/ 9.0</small></div></div>
+      <div class="band-card ring-wrap"><div class="ring" id="ringTop" style="--p:0"><span>0%</span></div><div class="ring-lab">总进度 PROGRESS</div></div>
+    </div>
+  </header>
+
+  <nav id="mainNav">
+    <button data-tab="home" class="on">🏠 今日</button>
+    <button data-tab="vocab">🃏 单词</button>
+    <button data-tab="grammar">🔧 语法</button>
+    <button data-tab="reading">📖 阅读</button>
+    <button data-tab="builder">🧩 造句</button>
+    <button data-tab="quiz">🎯 小测</button>
+  </nav>
+
+  <!-- HOME -->
+  <section id="tab-home" class="on">
+    <div class="grid">
+      <div class="card">
+        <span class="tag gold">DAILY MISSION</span>
+        <h3>今日任务 · 15 分钟拿下</h3>
+        <p class="desc">别贪多。每天就这三件，做完打勾，连续性比时长重要。</p>
+        <div id="taskList"></div>
+        <div class="stat-row">
+          <div class="stat"><div class="v" id="statStreak">0</div><div class="k">连续天数</div></div>
+          <div class="stat"><div class="v" id="statWords">0</div><div class="k">已掌握单词</div></div>
+          <div class="stat"><div class="v" id="statQuiz">—</div><div class="k">最近小测</div></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="tag green">WHY 4.5</span>
+        <h3>为什么偏偏是 4.5？</h3>
+        <p class="desc">澳洲 462 打工度假签要的是 <b style="color:#fff">functional English（功能性英语）</b>，大致对应雅思总分 4.5。它不要求你聊文学，只要求你能：看懂招工广告、填表、跟主管说清“几点上班、多少钱一小时、周末上不上班”。</p>
+        <div class="why">所以这里练的全是<b>真场景</b>：warehouse（仓库）、casual worker（临时工）、wage（工资）、shift（班次）—— 进了澳洲天天用的词，而不是课本里的苹果香蕉。</div>
+        <div class="stat-row">
+          <div class="stat"><div class="v" id="mistakeCount">0</div><div class="k">错题本</div></div>
+          <div class="stat"><div class="v" id="statSent">0/6</div><div class="k">造句完成</div></div>
+        </div>
+        <p class="desc" style="margin-top:12px">错题会自动收进错题本，在「语法」页最下面能看到。错哪补哪，不搞题海。</p>
+      </div>
+    </div>
+    <div class="card" style="margin-top:16px">
+      <span class="tag blue">ROADMAP</span>
+      <h3>从 3.0 到 4.5，你差的就这三块</h3>
+      <div class="grid" style="margin-top:10px">
+        <div><div class="t1" style="font-weight:800">① 词汇量</div><p class="desc">farm、family 这种天天见的词不认识，句子再简单也卡壳。目标先啃 300 个找工+生活高频词。</p><div class="progress grn"><i id="roadVocab" style="width:5%"></i></div></div>
+        <div><div class="t1" style="font-weight:800">② 基础语法</div><p class="desc">过去式 went、can 后面用原形、提问要带 do——就这几个小机关，考试和日常全绕不开。</p><div class="progress"><i id="roadGrammar" style="width:10%"></i></div></div>
+        <div><div class="t1" style="font-weight:800">③ 句子顺序</div><p class="desc">中文说“你什么吃”，英文必须 What do you eat? 语序练成本能，写作口语一起涨。</p><div class="progress"><i id="roadBuild" style="width:5%"></i></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOCAB -->
+  <section id="tab-vocab">
+    <div class="filters" id="vocabFilters"></div>
+    <div class="vocab-stage">
+      <div class="vcard" id="vcard">
+        <div class="vface front">
+          <span class="vcat" id="vCat">找工</span>
+          <div class="vword" id="vWord">warehouse</div>
+          <div class="vipa" id="vIpa">/ˈweəhaʊs/</div>
+          <button class="spk" id="vSpeak" title="朗读">🔊</button>
+          <span class="vhint">点卡片翻面看中文 · 点喇叭听发音</span>
+        </div>
+        <div class="vface back">
+          <span class="vcat">中文</span>
+          <div class="vcn" id="vCn">仓库</div>
+          <p class="vex" id="vEx"></p>
+          <span class="vhint">点卡片翻回去</span>
+        </div>
+      </div>
+    </div>
+    <div class="vctrl">
+      <button class="btn ghost sm" id="vPrev">← 上一个</button>
+      <button class="btn sm" id="vKnow">✅ 认识了</button>
+      <button class="btn ghost sm" id="vDont">❌ 还不认识</button>
+      <button class="btn ghost sm" id="vNext">下一个 →</button>
+      <button class="btn ghost sm" id="vOnlyUnknown">只看不认识的</button>
+    </div>
+    <div style="max-width:560px;margin:18px auto 0">
+      <div class="desc" style="color:var(--sub);font-size:13px">本组掌握进度 <b id="vProgTxt" style="color:#fff">0/0</b></div>
+      <div class="progress grn"><i id="vProg" style="width:0%"></i></div>
+    </div>
+  </section>
+
+  <!-- GRAMMAR -->
+  <section id="tab-grammar">
+    <div class="grid" id="grammarGrid"></div>
+    <div class="card" style="margin-top:16px">
+      <span class="tag red">MISTAKE BOOK</span>
+      <h3>我的错题本</h3>
+      <p class="desc">做错的题自动记在这里。隔两天回来看一遍，能自己讲清“为什么错”，才算真会了。</p>
+      <div id="mistakeList"></div>
+      <button class="btn ghost sm" id="clearMistakes" style="margin-top:12px">清空错题本</button>
+    </div>
+  </section>
+
+  <!-- READING -->
+  <section id="tab-reading">
+    <div class="filters" id="readingTabs"></div>
+    <div class="card">
+      <span class="tag blue">READING</span>
+      <h3 id="rTitle"></h3>
+      <p class="passage" id="rText"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
+        <button class="btn ghost sm" id="rSpeak">🔊 朗读全文</button>
+        <button class="btn ghost sm" id="rTransBtn">看中文翻译</button>
+      </div>
+      <div class="trans" id="rTrans"></div>
+      <div id="rQuiz"></div>
+    </div>
+    <p class="desc" style="color:var(--sub);font-size:13px;margin-top:12px">💡 标了下划线的词点一下就能看中文 + 听发音。先猜，再点，这才是练阅读的正确姿势。</p>
+  </section>
+
+  <!-- BUILDER -->
+  <section id="tab-builder">
+    <div class="card">
+      <span class="tag gold">SENTENCE BUILDER</span>
+      <h3 id="bTitle">造句训练</h3>
+      <p class="desc" id="bCn"></p>
+      <div class="built" id="bBuilt"><span style="color:var(--dim);font-weight:500">点下面的单词，按英文顺序把句子拼出来…</span></div>
+      <div class="chips" id="bChips"></div>
+      <div class="fb" id="bFb"></div>
+      <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap">
+        <button class="btn ghost sm" id="bUndo">↩ 撤回一个</button>
+        <button class="btn ghost sm" id="bClear">清空</button>
+        <button class="btn sm" id="bCheck">检查答案</button>
+        <button class="btn green sm" id="bNext">下一句 →</button>
+      </div>
+      <div class="progress" style="margin-top:16px"><i id="bProg" style="width:0%"></i></div>
+      <p class="desc" style="color:var(--sub);font-size:12.5px;margin-top:8px">进度 <b id="bProgTxt" style="color:#fff">0/6</b> · 英文的规矩：先说“谁”，再说“干啥”，提问句要把 do 提前。中国人最容易按中文语序拼，这关就是治这个的。</p>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="tab-quiz">
+    <div class="card" id="quizIntro">
+      <span class="tag green">MINI TEST</span>
+      <h3>10 题小测 · 看看你现在在哪一档</h3>
+      <p class="desc">词汇 + 语法 + 阅读混合出题，当场判分。分数是练习估算（不是官方雅思分），用来看进步曲线刚刚好。建议每周测一次，别天天测。</p>
+      <div class="stat-row">
+        <div class="stat"><div class="v">10 题</div><div class="k">题量</div></div>
+        <div class="stat"><div class="v">约 5 分钟</div><div class="k">用时</div></div>
+        <div class="stat"><div class="v" id="quizBest">—</div><div class="k">历史最好</div></div>
+      </div>
+      <button class="btn" id="quizStart" style="margin-top:18px">开始小测 →</button>
+      <div id="quizHistory" style="margin-top:14px"></div>
+    </div>
+    <div class="card" id="quizPlay" style="display:none">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <span class="tag gold" id="quizStep">第 1/10 题</span>
+        <span class="desc" style="color:var(--sub);font-size:13px">得分 <b id="quizScore" style="color:#fff">0</b></span>
+      </div>
+      <div class="progress"><i id="quizProg" style="width:0%"></i></div>
+      <div class="qbox" style="margin-top:16px"><div class="q" id="quizQ"></div><div class="opts" id="quizOpts"></div><div class="fb" id="quizFb"></div></div>
+      <button class="btn" id="quizNext" style="margin-top:16px;display:none">下一题 →</button>
+    </div>
+    <div class="card" id="quizResult" style="display:none;text-align:center">
+      <span class="tag green">RESULT</span>
+      <div class="score-big" id="resScore">0/10</div>
+      <h3 id="resBand" style="margin-top:6px"></h3>
+      <p class="desc" id="resTxt" style="max-width:520px;margin:10px auto 0;color:var(--sub);line-height:1.8"></p>
+      <div style="display:flex;gap:10px;justify-content:center;margin-top:18px;flex-wrap:wrap">
+        <button class="btn ghost" id="quizRetry">再测一次</button>
+        <button class="btn" id="quizToMistakes">去看错题本</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    IELTS 4.5 Sprint · 为澳洲 462 打工度假签准备的功能性英语训练<br>
+    进度保存在本机浏览器里，换手机/清缓存会重置。每天 15 分钟，比周末突击 3 小时管用。
+  </footer>
+</div>
+<div class="pop" id="wordPop"><div class="pw"></div><div class="pm"></div><div class="pe"></div><button class="spk" style="width:34px;height:34px;font-size:14px;margin-top:8px" id="popSpeak">🔊</button></div>
+<script>
+const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
+const store={get(k,d){try{const v=localStorage.getItem('ielts45_'+k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem('ielts45_'+k,JSON.stringify(v))}catch(e){}}};
+
+/* =============== 朗读 =============== */
+function speak(text,rate){
+  try{
+    speechSynthesis.cancel();
+    const u=new SpeechSynthesisUtterance(text); u.lang='en-AU'; u.rate=rate||0.82;
+    const vs=speechSynthesis.getVoices().filter(v=>v.lang&&v.lang.toLowerCase().startsWith('en'));
+    const au=vs.find(v=>v.lang.toLowerCase().includes('au'))||vs.find(v=>v.lang.toLowerCase().includes('gb'))||vs[0];
+    if(au)u.voice=au; speechSynthesis.speak(u);
+  }catch(e){}
+}
+if('speechSynthesis' in window) speechSynthesis.getVoices();
+
+/* =============== 词库 =============== */
+const VOCAB=[
+{w:"warehouse",ipa:"/ˈweəhaʊs/",cn:"仓库",cat:"找工",ex:"He works in a <b>warehouse</b> in Sydney.",exc:"他在悉尼一家仓库工作。"},
+{w:"casual worker",ipa:"/ˈkæʒuəl ˈwɜːkə/",cn:"临时工",cat:"找工",ex:"He is a <b>casual worker</b>, so he earns more per hour.",exc:"他是临时工，所以时薪更高。"},
+{w:"wage",ipa:"/weɪdʒ/",cn:"工资（时薪/周薪）",cat:"找工",ex:"The <b>wage</b> is 33 dollars an hour.",exc:"工资是每小时33美元。"},
+{w:"earn",ipa:"/ɜːn/",cn:"挣到、赚到",cat:"找工",ex:"She <b>earns</b> 800 dollars a week.",exc:"她一周挣800美元。"},
+{w:"shift",ipa:"/ʃɪft/",cn:"班次、轮班",cat:"找工",ex:"My <b>shift</b> starts at 7 in the morning.",exc:"我的班次早上7点开始。"},
+{w:"weekend",ipa:"/ˌwiːkˈend/",cn:"周末",cat:"找工",ex:"He does not work on <b>weekends</b>.",exc:"他周末不上班。"},
+{w:"employer",ipa:"/ɪmˈplɔɪə/",cn:"雇主、老板",cat:"找工",ex:"My <b>employer</b> is very kind.",exc:"我的雇主人很好。"},
+{w:"full-time",ipa:"/ˌfʊl ˈtaɪm/",cn:"全职的",cat:"找工",ex:"She has a <b>full-time</b> job.",exc:"她有一份全职工作。"},
+{w:"part-time",ipa:"/ˌpɑːt ˈtaɪm/",cn:"兼职的",cat:"找工",ex:"I want a <b>part-time</b> job.",exc:"我想找一份兼职工作。"},
+{w:"overtime",ipa:"/ˈəʊvətaɪm/",cn:"加班",cat:"找工",ex:"He works <b>overtime</b> on Friday.",exc:"他周五加班。"},
+{w:"per hour",ipa:"/pɜːr ˈaʊə/",cn:"每小时",cat:"找工",ex:"The job pays 30 dollars <b>per hour</b>.",exc:"这份工作每小时付30美元。"},
+{w:"apply for",ipa:"/əˈplaɪ fɔː/",cn:"申请（工作/签证）",cat:"找工",ex:"I want to <b>apply for</b> this job.",exc:"我想申请这份工作。"},
+{w:"experience",ipa:"/ɪkˈspɪəriəns/",cn:"经验",cat:"找工",ex:"You need <b>experience</b> for this job.",exc:"这份工作需要经验。"},
+{w:"contract",ipa:"/ˈkɒntrækt/",cn:"合同",cat:"找工",ex:"Please read the <b>contract</b> first.",exc:"请先看合同。"},
+{w:"payslip",ipa:"/ˈpeɪslɪp/",cn:"工资单",cat:"找工",ex:"Check your <b>payslip</b> every week.",exc:"每周核对你的工资单。"},
+{w:"save money",ipa:"/seɪv ˈmʌni/",cn:"攒钱",cat:"找工",ex:"He is <b>saving money</b> to buy a car.",exc:"他正在攒钱买车。"},
+{w:"visa",ipa:"/ˈviːzə/",cn:"签证",cat:"签证",ex:"You need a <b>visa</b> to work in Australia.",exc:"去澳洲工作需要签证。"},
+{w:"passport",ipa:"/ˈpɑːspɔːt/",cn:"护照",cat:"签证",ex:"My <b>passport</b> is new.",exc:"我的护照是新的。"},
+{w:"application",ipa:"/ˌæplɪˈkeɪʃn/",cn:"申请、申请表",cat:"签证",ex:"Fill in the <b>application</b> form.",exc:"填写申请表。"},
+{w:"submit",ipa:"/səbˈmɪt/",cn:"提交",cat:"签证",ex:"<b>Submit</b> your application online.",exc:"在网上提交你的申请。"},
+{w:"document",ipa:"/ˈdɒkjumənt/",cn:"文件、材料",cat:"签证",ex:"Upload this <b>document</b>.",exc:"上传这份文件。"},
+{w:"prove",ipa:"/pruːv/",cn:"证明",cat:"签证",ex:"You must <b>prove</b> you have 5,000 dollars.",exc:"你必须证明你有5000美元。"},
+{w:"at least",ipa:"/ət liːst/",cn:"至少",cat:"签证",ex:"You need <b>at least</b> 5,000 dollars.",exc:"你至少需要5000美元。"},
+{w:"requirement",ipa:"/rɪˈkwaɪəmənt/",cn:"要求、条件",cat:"签证",ex:"English is a <b>requirement</b>.",exc:"英语是一项要求。"},
+{w:"insurance",ipa:"/ɪnˈʃʊərəns/",cn:"保险",cat:"签证",ex:"Buy health <b>insurance</b> first.",exc:"先买健康保险。"},
+{w:"bank statement",ipa:"/bæŋk ˈsteɪtmənt/",cn:"银行流水",cat:"签证",ex:"Show your <b>bank statement</b>.",exc:"出示你的银行流水。"},
+{w:"farm",ipa:"/fɑːm/",cn:"农场",cat:"农场工地",ex:"Tom works on a <b>farm</b>.",exc:"汤姆在农场工作。"},
+{w:"pick",ipa:"/pɪk/",cn:"采摘",cat:"农场工地",ex:"They <b>pick</b> fruit every day.",exc:"他们每天采摘水果。"},
+{w:"fruit",ipa:"/fruːt/",cn:"水果",cat:"农场工地",ex:"The <b>fruit</b> is heavy.",exc:"这水果很重。"},
+{w:"vegetable",ipa:"/ˈvedʒtəbl/",cn:"蔬菜",cat:"农场工地",ex:"We grow <b>vegetables</b> here.",exc:"我们这里种蔬菜。"},
+{w:"harvest",ipa:"/ˈhɑːvɪst/",cn:"收获、收割",cat:"农场工地",ex:"The <b>harvest</b> starts in May.",exc:"收割五月开始。"},
+{w:"danger",ipa:"/ˈdeɪndʒə/",cn:"危险",cat:"农场工地",ex:"Watch out for <b>danger</b> signs.",exc:"注意危险标识。"},
+{w:"safe",ipa:"/seɪf/",cn:"安全的",cat:"农场工地",ex:"Stay <b>safe</b> at work.",exc:"工作时注意安全。"},
+{w:"heavy",ipa:"/ˈhevi/",cn:"重的",cat:"农场工地",ex:"This box is very <b>heavy</b>.",exc:"这个箱子很重。"},
+{w:"weather",ipa:"/ˈweðə/",cn:"天气",cat:"农场工地",ex:"The <b>weather</b> is hot today.",exc:"今天天气很热。"},
+{w:"early",ipa:"/ˈɜːli/",cn:"早的、提早",cat:"农场工地",ex:"He gets up <b>early</b>.",exc:"他起得很早。"},
+{w:"family",ipa:"/ˈfæməli/",cn:"家人",cat:"生活",ex:"He misses his <b>family</b>.",exc:"他想念他的家人。"},
+{w:"miss",ipa:"/mɪs/",cn:"想念",cat:"生活",ex:"I <b>miss</b> my mother.",exc:"我想念我妈妈。"},
+{w:"rent",ipa:"/rent/",cn:"房租；租",cat:"生活",ex:"The <b>rent</b> is 200 dollars a week.",exc:"房租每周200美元。"},
+{w:"share house",ipa:"/ʃeə haʊs/",cn:"合租屋",cat:"生活",ex:"He lives in a <b>share house</b>.",exc:"他住合租屋。"},
+{w:"grocery",ipa:"/ˈɡrəʊsəri/",cn:"食品杂货",cat:"生活",ex:"Buy <b>groceries</b> at the supermarket.",exc:"去超市买食品杂货。"},
+{w:"cheap",ipa:"/tʃiːp/",cn:"便宜的",cat:"生活",ex:"This shop is <b>cheap</b>.",exc:"这家店便宜。"},
+{w:"expensive",ipa:"/ɪkˈspensɪv/",cn:"贵的",cat:"生活",ex:"Sydney is <b>expensive</b>.",exc:"悉尼很贵。"},
+{w:"weekly",ipa:"/ˈwiːkli/",cn:"每周的",cat:"生活",ex:"I get a <b>weekly</b> wage.",exc:"我拿周薪。"},
+{w:"next year",ipa:"/nekst jɪə/",cn:"明年",cat:"生活",ex:"He wants to buy a car <b>next year</b>.",exc:"他想明年买辆车。"},
+{w:"hour",ipa:"/aʊə/",cn:"小时",cat:"生活",ex:"He works 40 <b>hours</b> a week.",exc:"他一周工作40小时。"},
+{w:"get up",ipa:"/ɡet ʌp/",cn:"起床",cat:"生活",ex:"I <b>get up</b> at 5 o'clock.",exc:"我5点起床。"},
+{w:"work",ipa:"/wɜːk/",cn:"工作",cat:"生活",ex:"I <b>work</b> on a farm.",exc:"我在农场工作。"}
+];
+let known=new Set(store.get('known',[]));
+let vCat='全部', vIdx=0, vUnknownOnly=false;
+function vList(){
+  let l=VOCAB.filter(v=>vCat==='全部'||v.cat===vCat);
+  if(vUnknownOnly) l=l.filter(v=>!known.has(v.w));
+  return l.length?l:VOCAB.filter(v=>vCat==='全部'||v.cat===vCat);
+}
+function renderVocab(){
+  const l=vList(); if(vIdx>=l.length)vIdx=0;
+  const v=l[vIdx];
+  $('#vCat').textContent=v.cat; $('#vWord').textContent=v.w; $('#vIpa').textContent=v.ipa;
+  $('#vCn').textContent=v.cn; $('#vEx').innerHTML=v.ex+'<br><span style="font-size:12.5px">'+v.exc+'</span>';
+  $('#vcard').classList.remove('flip');
+  const all=VOCAB.filter(x=>vCat==='全部'||x.cat===vCat);
+  const k=all.filter(x=>known.has(x.w)).length;
+  $('#vProgTxt').textContent=k+'/'+all.length;
+  $('#vProg').style.width=(all.length?k/all.length*100:0)+'%';
+  updateTop();
+}
+function buildVocabFilters(){
+  const cats=['全部',...new Set(VOCAB.map(v=>v.cat))];
+  $('#vocabFilters').innerHTML=cats.map(c=>'<button data-c="'+c+'" class="'+(c===vCat?'on':'')+'">'+c+'</button>').join('');
+  $$('#vocabFilters button').forEach(b=>b.onclick=()=>{vCat=b.dataset.c;vIdx=0;buildVocabFilters();renderVocab()});
+}
+$('#vcard').onclick=()=>$('#vcard').classList.toggle('flip');
+$('#vSpeak').onclick=e=>{e.stopPropagation();speak(vList()[vIdx].w.replace(/<[^>]+>/g,''))};
+$('#vPrev').onclick=()=>{const l=vList();vIdx=(vIdx-1+l.length)%l.length;renderVocab()};
+$('#vNext').onclick=()=>{const l=vList();vIdx=(vIdx+1)%l.length;renderVocab()};
+$('#vKnow').onclick=()=>{known.add(vList()[vIdx].w);store.set('known',[...known]);const l=vList();if(vIdx<l.length-1)vIdx++;renderVocab()};
+$('#vDont').onclick=()=>{known.delete(vList()[vIdx].w);store.set('known',[...known]);const l=vList();if(vIdx<l.length-1)vIdx++;renderVocab()};
+$('#vOnlyUnknown').onclick=e=>{vUnknownOnly=!vUnknownOnly;vIdx=0;e.target.textContent=vUnknownOnly?'看全部':'只看不认识的';e.target.classList.toggle('on',vUnknownOnly);renderVocab()};
+
+/* =============== 错题本 =============== */
+let mistakes=store.get('mistakes',[]);
+function addMistake(q,correct,why,src){
+  if(mistakes.some(m=>m.q===q))return;
+  mistakes.unshift({q,correct,why,src,t:Date.now()}); if(mistakes.length>60)mistakes.length=60;
+  store.set('mistakes',mistakes); renderMistakes(); updateTop();
+}
+function renderMistakes(){
+  $('#mistakeCount').textContent=mistakes.length;
+  $('#mistakeList').innerHTML=mistakes.length?mistakes.slice(0,20).map(m=>'<div class="mistake"><b style="color:#fff">'+m.q+'</b><br>正确答案：'+m.correct+'<br>'+m.why+' <span style="color:var(--dim)">（来自：'+m.src+'）</span></div>').join(''):'<p class="desc" style="color:var(--sub);font-size:13.5px;margin-top:10px">还没有错题。做错的题会自动记到这里。</p>';
+}
+$('#clearMistakes').onclick=()=>{mistakes=[];store.set('mistakes',[]);renderMistakes();updateTop()};
+
+/* =============== 语法 =============== */
+const GRAMMAR=[
+{t:"be 动词：I am from China",tag:"GRAMMAR 01",why:"英文里“是/来自”要有 be 动词：I 配 <b>am</b>，he/she 配 <b>is</b>，you/they 配 <b>are</b>。坑在哪：<b>from 后面不用再加 is</b>。I am from is China 就是多塞了一个 is，am 已经把活干了。",
+ ex:[["I am from is China.","I am from China.（我来自中国）"],["She are a worker.","She is a worker.（她是一名工人）"]],
+ qs:[
+  {q:"I <span class='blank'>___</span> from China.",o:["am","is","are"],a:0,e:"I 固定配 am，这条背死。"},
+  {q:"He <span class='blank'>___</span> a casual worker.",o:["am","is","are"],a:1,e:"He 是单数第三人称，配 is。"},
+  {q:"They <span class='blank'>___</span> farmers.",o:["am","is","are"],a:2,e:"They 是“他们”，配 are。"}]},
+{t:"过去式：Yesterday I went",tag:"GRAMMAR 02",why:"句子里出现 <b>yesterday（昨天）、last week（上周）</b>，动词就要变过去式。go 的过去式是 <b>went</b>（不规则，得单记）；work 的过去式是 worked（直接加 ed）。看到时间词，先想“这事已经发生了”。",
+ ex:[["Yesterday I go to the shop.","Yesterday I went to the shop.（昨天我去了商店）"]],
+ qs:[
+  {q:"Yesterday I <span class='blank'>___</span> to the shop.",o:["go","went","goes"],a:1,e:"Yesterday 是过去时间，go 要变 went。"},
+  {q:"Last week he <span class='blank'>___</span> on a farm.",o:["work","worked","working"],a:1,e:"Last week 是过去，work 加 ed 变 worked。"},
+  {q:"He <span class='blank'>___</span> to Sydney last year.",o:["went","go","goes"],a:0,e:"last year 是过去，went 才对。"}]},
+{t:"can 后面用原形：can speak",tag:"GRAMMAR 03",why:"<b>can = 能、会</b>。规矩只有一条：can 后面的动词永远用最原始的样子，不加 ing、不加 s。can speaking、can speaks 都是错的。",
+ ex:[["He can speaking English.","He can speak English.（他会说英语）"]],
+ qs:[
+  {q:"He can <span class='blank'>___</span> English.",o:["speaking","speak","speaks"],a:1,e:"can 后面用原形 speak，什么都不加。"},
+  {q:"I can <span class='blank'>___</span> a car.",o:["drive","driving","drives"],a:0,e:"can 后面用原形 drive。"},
+  {q:"She can <span class='blank'>___</span> fruit fast.",o:["picks","picking","pick"],a:2,e:"can 后面用原形 pick。"}]},
+{t:"提问句序：What do you eat?",tag:"GRAMMAR 04",why:"中文问“你吃什么”，是把“什么”塞在中间。英文必须把疑问词提到最前面，再跟一个帮手 <b>do</b>：<b>What do you eat?</b> do 就是提问的信号，听见 do 就知道这是个问句。",
+ ex:[["You what eat?","What do you eat?（你吃什么？）"],["Where you work?","Where do you work?（你在哪工作？）"]],
+ qs:[
+  {q:"<span class='blank'>___</span> do you work?",o:["Where","What time is","Who is"],a:0,e:"问地点用 Where，句型：Where do you work?"},
+  {q:"What <span class='blank'>___</span> you eat?",o:["are","do","is"],a:1,e:"提问句中间要放帮手 do。"},
+  {q:"<span class='blank'>___</span> do you get up?",o:["Where is","What","What time"],a:2,e:"问几点用 What time：What time do you get up?"}]},
+{t:"because 因果：because he is…",tag:"GRAMMAR 05",why:"<b>because = 因为</b>，后面要跟一整句话（谁 + 是/做 + 什么）。He earns 33 dollars <b>because he is a casual worker</b>——前半句是结果，后半句是原因。阅读题问“为什么”，就去原文找 because。",
+ ex:[["He earns 33 dollars. He is a casual worker.","He earns 33 dollars because he is a casual worker.（他时薪33，因为他是临时工）"]],
+ qs:[
+  {q:"He is saving money <span class='blank'>___</span> he wants to buy a car.",o:["but","because","so"],a:1,e:"“攒钱”是因为“想买车”，因果用 because。"},
+  {q:"She earns more because she <span class='blank'>___</span> a casual worker.",o:["am","is","are"],a:1,e:"she 配 is：because she is…"},
+  {q:"为什么 Jack 时薪有 33 美元？",o:["因为他喜欢这份工作","因为他是临时工","因为他周末上班"],a:1,e:"原文：because he is a casual worker——因为他是临时工。"}]}
+];
+let grammarDone=store.get('grammarDone',{});
+function renderGrammar(){
+  $('#grammarGrid').style.gridTemplateColumns='1fr';
+  $('#grammarGrid').innerHTML=GRAMMAR.map((g,gi)=>{
+    const done=(grammarDone[gi]||[]).length;
+    return '<div class="card"><span class="tag gold">'+g.tag+'</span><h3>'+g.t+'</h3><div class="why">'+g.why+'</div>'
+    + g.ex.map(e=>'<p class="exline"><span class="bad">'+e[0]+'</span><br><span class="good">✔ '+e[1]+'</span></p>').join('')
+    + g.qs.map((q,qi)=>'<div class="qbox" data-g="'+gi+'" data-q="'+qi+'"><div class="q">'+q.q+'</div><div class="opts">'+q.o.map((o,oi)=>'<button class="opt" data-o="'+oi+'">'+o+'</button>').join('')+'</div><div class="fb"></div></div>').join('')
+    + '<p class="desc" style="color:var(--sub);font-size:12.5px;margin-top:10px">本课进度：<b style="color:#fff" id="gprog-'+gi+'">'+done+'/'+g.qs.length+'</b> 题答对</p></div>';
+  }).join('');
+  $$('#grammarGrid .qbox').forEach(box=>{
+    const gi=+box.dataset.g, qi=+box.dataset.q, q=GRAMMAR[gi].qs[qi];
+    box.querySelectorAll('.opt').forEach(btn=>btn.onclick=()=>{
+      const oi=+btn.dataset.o, fb=box.querySelector('.fb');
+      box.querySelectorAll('.opt').forEach(b=>b.disabled=true);
+      box.querySelectorAll('.opt')[q.a].classList.add('right');
+      if(oi===q.a){
+        fb.className='fb show ok'; fb.innerHTML='✅ 对了。'+q.e;
+        grammarDone[gi]=[...new Set([...(grammarDone[gi]||[]),qi])]; store.set('grammarDone',grammarDone);
+        const el=$('#gprog-'+gi); if(el)el.textContent=grammarDone[gi].length+'/'+GRAMMAR[gi].qs.length;
+      }else{
+        btn.classList.add('wrong'); fb.className='fb show no'; fb.innerHTML='❌ 错了。'+q.e;
+        addMistake(q.q.replace(/<[^>]+>/g,''),q.o[q.a],q.e,GRAMMAR[gi].t);
+      }
+      updateRoad(); updateTop();
+    });
+  });
+}
+
+/* =============== 阅读 =============== */
+const GLOSS={
+ farm:{cn:"农场",ex:"on a farm 在农场"}, warehouse:{cn:"仓库",ex:"in a warehouse 在仓库"}, casual:{cn:"临时的",ex:"casual worker 临时工"},
+ worker:{cn:"工人、工作者",ex:"a casual worker 一名临时工"}, earns:{cn:"挣到（earn 的三单）",ex:"He earns 33 dollars. 他挣33美元"},
+ weekend:{cn:"周末",ex:"on weekends 在周末"}, weekends:{cn:"周末（复数）",ex:"does not work on weekends 周末不上班"},
+ family:{cn:"家人",ex:"misses his family 想念家人"}, cafe:{cn:"咖啡馆",ex:"works in a cafe 在咖啡馆工作"}, manager:{cn:"经理、主管",ex:"her manager 她的经理"},
+ travel:{cn:"旅行",ex:"wants to travel 想去旅行"}, reef:{cn:"礁",ex:"the Great Barrier Reef 大堡礁"}, saving:{cn:"正在攒钱",ex:"is saving money 在攒钱"},
+ because:{cn:"因为",ex:"because he is… 因为他是……"}
+};
+const READINGS=[
+{t:"Tom 在农场",text:'Tom works on a <span class="w" data-w="farm">farm</span> in Australia. He gets up at 5 o\'clock every day. He <span class="w" data-w="earns">earns</span> 30 dollars an hour and works 40 hours a week. He likes his job but he misses his <span class="w" data-w="family">family</span>.',
+ trans:"汤姆在澳大利亚的农场工作。他每天早上5点起床，时薪30美元，一周工作40个小时。他喜欢他的工作，但是想念他的家人。",
+ qs:[
+  {q:"Tom 几点起床？",o:["4点","5点","6点"],a:1,e:"原文：gets up at 5 o'clock。"},
+  {q:"Tom 一周工作多少小时？",o:["30小时","35小时","40小时"],a:2,e:"原文：works 40 hours a week。"},
+  {q:"Tom 想念什么？",o:["他的家乡菜","他的家人","他的朋友"],a:1,e:"misses his family——想念家人。family 是“家人”，不是“家”。"}]},
+{t:"Jack 在仓库",text:'Jack works in a <span class="w" data-w="warehouse">warehouse</span> in Sydney. He starts work at 7 in the morning and finishes at 3 in the afternoon. He <span class="w" data-w="earns">earns</span> 33 dollars an hour <span class="w" data-w="because">because</span> he is a <span class="w" data-w="casual">casual</span> <span class="w" data-w="worker">worker</span>. He does not work on <span class="w" data-w="weekends">weekends</span>. He is <span class="w" data-w="saving">saving</span> money because he wants to buy a car next year.',
+ trans:"杰克在悉尼一家仓库工作。他早上7点上班，下午3点下班。因为他是临时工，所以时薪33美元。他周末不上班。他正在攒钱，因为他想明年买一辆车。",
+ qs:[
+  {q:"Jack 在哪里上班？",o:["农场","仓库","咖啡馆"],a:1,e:"warehouse = 仓库。"},
+  {q:"Jack 为什么时薪有 33 美元？",o:["因为他是临时工","因为他经验丰富","因为他周末上班"],a:0,e:"because he is a casual worker——因为他是临时工。"},
+  {q:"Jack 攒钱想干什么？",o:["买房","买车","回国"],a:1,e:"wants to buy a car next year——明年买车。"}]},
+{t:"Mary 在咖啡馆",text:'Mary works in a <span class="w" data-w="cafe">cafe</span> in Melbourne. She starts work at 8 in the morning and finishes at 2 in the afternoon. She <span class="w" data-w="earns">earns</span> 28 dollars an hour. She works on <span class="w" data-w="weekends">weekends</span> but she does not work on Mondays. Her <span class="w" data-w="manager">manager</span> is kind. She is <span class="w" data-w="saving">saving</span> money <span class="w" data-w="because">because</span> she wants to <span class="w" data-w="travel">travel</span> to the Great Barrier <span class="w" data-w="reef">Reef</span>.',
+ trans:"玛丽在墨尔本一家咖啡馆工作。她早上8点上班，下午2点下班，时薪28美元。她周末上班，但周一不上班。她的经理人很好。她正在攒钱，因为她想去大堡礁旅行。",
+ qs:[
+  {q:"Mary 几点下班？",o:["下午2点","下午3点","下午5点"],a:0,e:"finishes at 2 in the afternoon。"},
+  {q:"Mary 哪天不上班？",o:["周六","周日","周一"],a:2,e:"does not work on Mondays——周一不上班。别被 weekends 绕晕。"},
+  {q:"Mary 攒钱想干什么？",o:["买车","去大堡礁旅行","开咖啡馆"],a:1,e:"wants to travel to the Great Barrier Reef。"}]}
+];
+let rIdx=0;
+function renderReadingTabs(){
+  $('#readingTabs').innerHTML=READINGS.map((r,i)=>'<button data-i="'+i+'" class="'+(i===rIdx?'on':'')+'">'+r.t+'</button>').join('');
+  $$('#readingTabs button').forEach(b=>b.onclick=()=>{rIdx=+b.dataset.i;renderReadingTabs();renderReading()});
+}
+function renderReading(){
+  const r=READINGS[rIdx];
+  $('#rTitle').textContent=r.t; $('#rText').innerHTML=r.text;
+  $('#rTrans').textContent=r.trans; $('#rTrans').classList.remove('show');
+  $('#rQuiz').innerHTML=r.qs.map((q,qi)=>'<div class="qbox" data-q="'+qi+'"><div class="q">'+(qi+1)+'. '+q.q+'</div><div class="opts">'+q.o.map((o,oi)=>'<button class="opt" data-o="'+oi+'">'+o+'</button>').join('')+'</div><div class="fb"></div></div>').join('');
+  $$('#rQuiz .qbox').forEach(box=>{
+    const q=r.qs[+box.dataset.q];
+    box.querySelectorAll('.opt').forEach(btn=>btn.onclick=()=>{
+      const oi=+btn.dataset.o, fb=box.querySelector('.fb');
+      box.querySelectorAll('.opt').forEach(b=>b.disabled=true);
+      box.querySelectorAll('.opt')[q.a].classList.add('right');
+      if(oi===q.a){fb.className='fb show ok';fb.innerHTML='✅ 对了。'+q.e}
+      else{btn.classList.add('wrong');fb.className='fb show no';fb.innerHTML='❌ 错了。'+q.e;addMistake(q.q,q.o[q.a],q.e,'阅读·'+r.t)}
+    });
+  });
+  $$('#rText .w').forEach(w=>w.onclick=e=>{
+    const g=GLOSS[w.dataset.w]; if(!g)return;
+    const pop=$('#wordPop');
+    pop.querySelector('.pw').textContent=w.textContent;
+    pop.querySelector('.pm').textContent=g.cn;
+    pop.querySelector('.pe').textContent=g.ex;
+    $('#popSpeak').onclick=ev=>{ev.stopPropagation();speak(w.textContent)};
+    pop.style.display='block';
+    const x=Math.min(e.clientX,innerWidth-260), y=Math.min(e.clientY+14,innerHeight-170);
+    pop.style.left=x+'px'; pop.style.top=y+'px'; e.stopPropagation();
+  });
+}
+document.addEventListener('click',e=>{if(!e.target.closest('#wordPop'))$('#wordPop').style.display='none'});
+$('#rTransBtn').onclick=()=>$('#rTrans').classList.toggle('show');
+$('#rSpeak').onclick=()=>speak(READINGS[rIdx].text.replace(/<[^>]+>/g,''),0.72);
+
+/* =============== 造句 =============== */
+const SENTENCES=[
+{cn:"我来自中国。",t:["I","am","from","China."],why:"am 已经是“是”了，from 后面别再加 is。"},
+{cn:"你吃什么？",t:["What","do","you","eat?"],why:"疑问词 What 最前面，帮手 do 紧跟其后。"},
+{cn:"昨天我去了商店。",t:["Yesterday","I","went","to","the","shop."],why:"Yesterday 一出现，go 就得变 went。"},
+{cn:"他会说英语。",t:["He","can","speak","English."],why:"can 后面 speak 用原形，不加 ing。"},
+{cn:"他是悉尼一家仓库的临时工。",t:["He","is","a","casual","worker","in","Sydney."],why:"先说“他是临时工”，再补地点 in Sydney，英文先主干后细节。"},
+{cn:"我想明年买一辆车。",t:["I","want","to","buy","a","car","next","year."],why:"want to buy = 想要买；next year 放最后，英文时间喜欢收尾。"}
+];
+let bIdx=0, bPicked=[], bDone=new Set(store.get('bDone',[]));
+function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function renderBuilder(){
+  const s=SENTENCES[bIdx];
+  $('#bCn').textContent='第 '+(bIdx+1)+' 句：'+s.cn+(bDone.has(bIdx)?' ✅ 已完成':'');
+  $('#bChips').innerHTML=shuffle(s.t).map((w,i)=>'<button class="chip" data-w="'+w+'">'+w+'</button>').join('');
+  bPicked=[]; drawPicked();
+  $('#bFb').className='fb';
+  $$('#bChips .chip').forEach(c=>c.onclick=()=>{c.classList.add('used');bPicked.push({w:c.dataset.w,el:c});drawPicked()});
+  $('#bProgTxt').textContent=bDone.size+'/6';
+  $('#bProg').style.width=(bDone.size/6*100)+'%';
+  $('#statSent').textContent=bDone.size+'/6';
+}
+function drawPicked(){
+  $('#bBuilt').innerHTML=bPicked.length?bPicked.map(p=>'<span>'+p.w+'</span>').join(' '):'<span style="color:var(--dim);font-weight:500">点下面的单词，按英文顺序把句子拼出来…</span>';
+}
+$('#bUndo').onclick=()=>{const p=bPicked.pop();if(p)p.el.classList.remove('used');drawPicked()};
+$('#bClear').onclick=()=>{bPicked.forEach(p=>p.el.classList.remove('used'));bPicked=[];drawPicked()};
+$('#bCheck').onclick=()=>{
+  const s=SENTENCES[bIdx], fb=$('#bFb');
+  const got=bPicked.map(p=>p.w).join(' '), want=s.t.join(' ');
+  if(got===want){fb.className='fb show ok';fb.innerHTML='✅ 拼对了！'+s.why+'<br><b>'+want+'</b>';speak(want,0.75);bDone.add(bIdx);store.set('bDone',[...bDone]);renderBuilderProg()}
+  else{fb.className='fb show no';fb.innerHTML='❌ 顺序还不对。提示：'+s.why;addMistake('造句：'+s.cn,want,s.why,'造句训练')}
+};
+function renderBuilderProg(){$('#bProgTxt').textContent=bDone.size+'/6';$('#bProg').style.width=(bDone.size/6*100)+'%';$('#statSent').textContent=bDone.size+'/6';updateRoad();updateTop()}
+$('#bNext').onclick=()=>{bIdx=(bIdx+1)%SENTENCES.length;renderBuilder()};
+
+/* =============== 小测 =============== */
+const QUIZ_BANK=[
+{q:"单词：wage 是什么意思？",o:["签证","工资","仓库"],a:1,e:"wage = 工资。"},
+{q:"单词：warehouse 是什么意思？",o:["农场","仓库","咖啡馆"],a:1,e:"warehouse = 仓库。"},
+{q:"单词：casual worker 是什么意思？",o:["全职员工","临时工","老板"],a:1,e:"casual worker = 临时工。"},
+{q:"单词：visa 是什么意思？",o:["护照","签证","保险"],a:1,e:"visa = 签证，passport 才是护照。"},
+{q:"单词：prove 是什么意思？",o:["证明","提交","申请"],a:0,e:"prove = 证明。"},
+{q:"单词：at least 是什么意思？",o:["最多","至少","马上"],a:1,e:"at least = 至少。"},
+{q:"I ___ from China.",o:["am","is","are"],a:0,e:"I 配 am。"},
+{q:"Yesterday I ___ to the shop.",o:["go","went","goes"],a:1,e:"Yesterday 是过去，go → went。"},
+{q:"He can ___ English.",o:["speaking","speaks","speak"],a:2,e:"can 后面用原形 speak。"},
+{q:"___ do you get up?",o:["What time","Where is","Who"],a:0,e:"问几点：What time do you get up?"},
+{q:"What ___ you eat?",o:["is","do","are"],a:1,e:"提问句要放帮手 do。"},
+{q:"He earns 33 dollars ___ he is a casual worker.",o:["but","because","or"],a:1,e:"因果用 because。"},
+{q:"阅读：Mary works in a cafe. She earns 28 dollars an hour. She does not work on Mondays. —— Mary 周几不上班？",o:["周一","周六","周日"],a:0,e:"does not work on Mondays = 周一不上班。"},
+{q:"阅读：Jack is saving money because he wants to buy a car next year. —— Jack 攒钱是为了？",o:["买房","买车","旅行"],a:1,e:"buy a car next year = 明年买车。"},
+{q:"单词：employer 是什么意思？",o:["员工","雇主/老板","经理"],a:1,e:"employer = 雇主，employee 才是员工。"},
+{q:"单词：per hour 是什么意思？",o:["每天","每小时","每周"],a:1,e:"per hour = 每小时。"}
+];
+let quiz={list:[],step:0,score:0};
+function bandOf(score){
+  if(score<=2)return['约 2.5','地基还在打。先把单词和 be 动词啃下来，别急着刷题。'];
+  if(score<=4)return['约 3.0','和你现在的估分吻合。词汇是最大短板，每天 10 个词，一个月就能明显不一样。'];
+  if(score===5)return['约 3.5','开始上道了。because 因果句和过去式再稳一稳，就摸到 4.0。'];
+  if(score<=7)return['约 4.0','离目标只剩半步。把错题本清掉，再测一次大概率就过线。'];
+  if(score===8)return['约 4.5 🎉','达到 462 功能性英语的估算线了！保持手感，别停。'];
+  if(score===9)return['约 5.0','稳稳过线。接下来可以练听力和开口说了。'];
+  return['约 5.5','这套题对你已经太简单了，去挑战真题吧。'];
+}
+function renderQuizHistory(){
+  const h=store.get('quizHistory',[]);
+  $('#quizBest').textContent=h.length?Math.max(...h.map(x=>x.score))+'/10':'—';
+  $('#statQuiz').textContent=h.length?h[h.length-1].score+'/10':'—';
+  $('#quizHistory').innerHTML=h.length?h.slice(-5).reverse().map(x=>'<div class="listline"><span>'+x.date+'</span><b>'+x.score+'/10 · '+x.band+'</b></div>').join(''):'';
+}
+$('#quizStart').onclick=()=>{
+  quiz={list:shuffle(QUIZ_BANK).slice(0,10),step:0,score:0};
+  $('#quizIntro').style.display='none'; $('#quizResult').style.display='none'; $('#quizPlay').style.display='block';
+  drawQuiz();
+};
+function drawQuiz(){
+  const q=quiz.list[quiz.step];
+  $('#quizStep').textContent='第 '+(quiz.step+1)+'/10 题';
+  $('#quizScore').textContent=quiz.score;
+  $('#quizProg').style.width=(quiz.step/10*100)+'%';
+  $('#quizQ').innerHTML=q.q;
+  $('#quizFb').className='fb'; $('#quizNext').style.display='none';
+  $('#quizOpts').innerHTML=q.o.map((o,i)=>'<button class="opt" data-o="'+i+'">'+o+'</button>').join('');
+  $$('#quizOpts .opt').forEach(btn=>btn.onclick=()=>{
+    const oi=+btn.dataset.o, fb=$('#quizFb');
+    $$('#quizOpts .opt').forEach(b=>b.disabled=true);
+    $$('#quizOpts .opt')[q.a].classList.add('right');
+    if(oi===q.a){quiz.score++;fb.className='fb show ok';fb.innerHTML='✅ 对了。'+q.e}
+    else{btn.classList.add('wrong');fb.className='fb show no';fb.innerHTML='❌ 错了。'+q.e;addMistake(q.q.replace(/<[^>]+>/g,''),q.o[q.a],q.e,'小测')}
+    $('#quizScore').textContent=quiz.score;
+    $('#quizNext').style.display='block';
+    $('#quizNext').textContent=quiz.step===9?'看结果 →':'下一题 →';
+  });
+}
+$('#quizNext').onclick=()=>{
+  if(quiz.step<9){quiz.step++;drawQuiz();return}
+  const [band,txt]=bandOf(quiz.score);
+  const h=store.get('quizHistory',[]);
+  h.push({date:new Date().toLocaleDateString('zh-CN'),score:quiz.score,band});
+  store.set('quizHistory',h);
+  $('#quizPlay').style.display='none'; $('#quizResult').style.display='block';
+  $('#resScore').textContent=quiz.score+'/10';
+  $('#resBand').textContent='估算水平：'+band;
+  $('#resTxt').textContent=txt+'（练习估算，不是官方雅思成绩）';
+  renderQuizHistory(); updateTop();
+};
+$('#quizRetry').onclick=()=>$('#quizStart').click();
+$('#quizToMistakes').onclick=()=>switchTab('grammar');
+
+/* =============== 今日任务 / 顶部 =============== */
+const TASKS=[
+{t1:"背 10 个单词",t2:"去「单词」页，点“认识了”标记，专挑不认识的磨。"},
+{t1:"做对 1 课语法题",t2:"去「语法」页选一课，把题做完，错的看“为什么”。"},
+{t1:"读 1 篇短文并答题",t2:"去「阅读」页，先猜生词意思，再点下划线词核对。"}
+];
+function todayKey(){return new Date().toLocaleDateString('zh-CN')}
+function renderTasks(){
+  let t=store.get('tasks',null);
+  if(!t||t.date!==todayKey()){t={date:todayKey(),done:[false,false,false]};store.set('tasks',t)}
+  $('#taskList').innerHTML=TASKS.map((x,i)=>'<div class="task"><div class="chk '+(t.done[i]?'done':'')+'" data-i="'+i+'">✔</div><div><div class="t1">'+x.t1+'</div><div class="t2">'+x.t2+'</div></div></div>').join('');
+  $$('#taskList .chk').forEach(c=>c.onclick=()=>{
+    const t2=store.get('tasks'); t2.done[+c.dataset.i]=!t2.done[+c.dataset.i]; store.set('tasks',t2);
+    if(t2.done.every(Boolean)){
+      const last=store.get('lastDone','');
+      if(last!==todayKey()){
+        const y=new Date(Date.now()-864e5).toLocaleDateString('zh-CN');
+        store.set('streak',(last===y?store.get('streak',0):0)+1);
+        store.set('lastDone',todayKey());
+      }
+    }
+    renderTasks(); updateTop();
+  });
+  $('#statStreak').textContent=store.get('streak',0);
+}
+function updateRoad(){
+  $('#roadVocab').style.width=Math.max(5,known.size/VOCAB.length*100)+'%';
+  const gTotal=GRAMMAR.reduce((s,g)=>s+g.qs.length,0), gDone=Object.values(grammarDone).reduce((s,a)=>s+a.length,0);
+  $('#roadGrammar').style.width=Math.max(5,gTotal?gDone/gTotal*100:0)+'%';
+  $('#roadBuild').style.width=Math.max(5,bDone.size/6*100)+'%';
+}
+function updateTop(){
+  const p=Math.round(Math.min(100, known.size/VOCAB.length*55 + bDone.size/6*20 + (store.get('quizHistory',[]).length?Math.max(...store.get('quizHistory',[]).map(x=>x.score))/10*25:0)));
+  const ring=$('#ringTop'); ring.style.setProperty('--p',p); ring.querySelector('span').textContent=p+'%';
+  $('#statWords').textContent=known.size;
+  renderQuizHistory();
+}
+
+/* =============== 导航 =============== */
+function switchTab(name){
+  $$('#mainNav button').forEach(b=>b.classList.toggle('on',b.dataset.tab===name));
+  $$('section').forEach(s=>s.classList.toggle('on',s.id==='tab-'+name));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+$$('#mainNav button').forEach(b=>b.onclick=()=>switchTab(b.dataset.tab));
+
+/* =============== 初始化 =============== */
+buildVocabFilters(); renderVocab(); renderGrammar(); renderMistakes(); renderReadingTabs(); renderReading(); renderBuilder(); renderTasks(); updateRoad(); updateTop();
+</script>
+</body>
+</html>
